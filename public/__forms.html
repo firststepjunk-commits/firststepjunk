@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8" /><title>Forms</title></head>
+  <body>
+    <!-- NOTE: The public quote form no longer uses Netlify Forms — it posts
+         directly to a Google Apps Script (see google-apps-script/README.md),
+         so its definition was removed from this file. -->
+
+    <!-- Internal/test contact form used by the private /settings page. -->
+    <form name="settings-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="text" name="bot-field" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </body>
+</html>

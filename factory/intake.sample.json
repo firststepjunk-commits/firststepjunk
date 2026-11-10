@@ -1,0 +1,33 @@
+{
+  "$comment": "Copy this file, replace every value with the new business's answers from INTAKE_FORM.md, then run: node factory/generate.mjs your-intake.json",
+  "legalName": "FirstStep Junk Removal LLC",
+  "brandName": "First Step Junk Removal",
+  "shortName": "First Step Junk",
+  "ownerFirstName": "Michael",
+  "primaryService": "junk removal",
+  "gbpCategory": "Junk removal service",
+  "city": "Rockford",
+  "state": "IL",
+  "phoneDigits": "7797721857",
+  "email": "firststep.junk@gmail.com",
+  "domain": "firststepjunk.com",
+  "areaServed": [
+    "Rockford, IL",
+    "Loves Park, IL",
+    "Machesney Park, IL",
+    "Belvidere, IL",
+    "Roscoe, IL",
+    "Cherry Valley, IL",
+    "Winnebago County, IL"
+  ],
+  "geo": { "latitude": 42.2711, "longitude": -89.094 },
+  "hours": { "opens": "07:30", "closes": "19:30" },
+  "social": {
+    "instagram": "https://www.instagram.com/firststep_junkremoval/",
+    "facebook": "https://www.facebook.com/profile.php?id=61589040134967",
+    "mapsUrl": "https://www.google.com/maps/place/FirstStep+Junk+Removal+LLC/@42.2711,-89.0940,15z/data=!4m2!3m1!1s0x0:0xc09e203e15b1f205"
+  },
+  "gaMeasurementId": "G-D1QT0J7VPN",
+  "crmReplyLine": "",
+  "extraReplacements": []
+}

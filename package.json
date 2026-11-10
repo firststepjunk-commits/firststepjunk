@@ -1,0 +1,27 @@
+{
+  "name": "first-step",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "sheets:seed": "node scripts/setup-sheets.mjs",
+    "test": "node --test tests/submissions.test.js"
+  },
+  "dependencies": {
+    "@splidejs/splide": "^4.1.4",
+    "next": "16.2.9",
+    "react": "19.2.4",
+    "react-aria-components": "^1.19.0",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.1",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.9",
+    "postcss": "^8.5.16",
+    "tailwindcss": "^4.3.1"
+  }
+}

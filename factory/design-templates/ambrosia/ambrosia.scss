@@ -1,0 +1,598 @@
+// ===========================================================================
+// AMBROSIA — design template #1 stylesheet
+// Converted from indented Sass → SCSS; errors corrected (marked // FIX:).
+// Full fix log: ../README.md
+// ===========================================================================
+
+@import url('https://vvvaporwaves.github.io/jcink-coding/music/mediaelementplayer.min.css');
+
+@font-face {
+  font-family: "the impressionist";
+  font-weight: normal;
+  // FIX: format('woff') source pointed at the .woff2 file; also reordered
+  // woff2 → woff → ttf → otf (browsers take the first format they support).
+  src: url('https://vvvaporwaves.github.io/fonts/impezion/theimpressionist.woff2') format('woff2'),
+       url('https://vvvaporwaves.github.io/fonts/impezion/theimpressionist.woff') format('woff'),
+       url('https://vvvaporwaves.github.io/fonts/impezion/theimpressionist.ttf') format('truetype'),
+       url('https://vvvaporwaves.github.io/fonts/impezion/theimpressionist.otf') format('opentype');
+}
+
+$pink: #D1A3A3;
+$blue: #ABC0C8;
+$black: #1B1A1A;
+$white: #C7C7C7;
+$font1: Exodus, serif;
+// FIX: multi-word family quoted; `script` is not a generic family → cursive.
+$font2: "the impressionist", cursive;
+// NOT a typo: exodus.css genuinely defines both "Exodus" and "Exoduss" —
+// the double-s face is the hover accent. Verified 2026-07-16.
+$font-accent: Exoduss, serif;
+
+@mixin inner-border {
+  border: 1px solid $white;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  width: calc(100% - 4rem);
+  height: calc(100% - 4rem);
+  pointer-events: none;
+  border-radius: 35px;
+}
+
+body {
+  background: url(https://assets.codepen.io/4400499/bg-final.png) fixed;
+  color: $white;
+  font-family: 'Roboto', sans-serif; // FIX: was `sans serif`
+
+  a {
+    transition: 0.3s ease;
+    color: $pink;
+
+    &:hover {
+      opacity: 0.8;
+      color: $blue;
+    }
+  }
+
+  header {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+
+    .banner-img {
+      display: grid;
+      align-content: center;
+      // FIX: removed `flex-wrap: wrap` — no-op under display: grid
+      justify-content: center;
+      height: 90vh;
+      width: 100vw;
+
+      h1 {
+        margin: 0;
+        padding: 0;
+        font-family: $font2;
+        font-size: 10rem;
+        line-height: 0.75em;
+        margin-top: -4rem;
+        color: #D1A3A3;
+      }
+
+      h2 {
+        font-family: $font1;
+        font-size: 0.75rem;
+        letter-spacing: 0.5ch;
+        width: 105px;
+        margin: calc(-1.5rem - 5px) 0 -1rem 0;
+        color: #D1A3A3;
+        background: #1b1a1a;
+        padding: 5px; // FIX: consolidated duplicate padding: 0 / padding: 5px
+        height: 30px;
+      }
+    }
+  }
+
+  main {
+    margin-top: -100px;
+    position: relative;
+    z-index: 10;
+
+    .wrapper {
+      width: 800px;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 2rem;
+
+      .innerwrapper {
+
+        #nav {
+          padding: 2rem;
+          position: sticky;
+          top: 0;
+          background: $black;
+          font-family: $font1;
+          letter-spacing: 0.1ch;
+          z-index: 100;
+
+          a {
+            color: $pink;
+
+            &:hover {
+              font-family: $font-accent;
+              color: $blue;
+            }
+          }
+        }
+
+        div[id*=category-] {
+          display: grid;
+          grid: auto / repeat(auto-fill, 50%);
+          position: relative;
+          font-size: 0.9rem;
+
+          h3 {
+            grid-column: 1/3;
+            font: 5rem/0.5em $font2;
+            margin-left: 0.5em;
+            margin-bottom: 0rem;
+          }
+
+          div[class*=forum-] {
+            background: $black;
+            padding: 2rem;
+            position: relative;
+
+            p {
+              line-height: 1.5em;
+            }
+
+            h4 {
+              margin: 0;
+              padding: 0;
+
+              a {
+                font-size: 1.2rem;
+              }
+            }
+
+            a {
+              color: $pink;
+              font-family: $font1;
+              letter-spacing: 0.1ch;
+
+              &:hover {
+                color: $blue;
+              }
+            }
+
+            .f-inner {
+              position: relative;
+            }
+
+            ul {
+              margin: 0;
+              padding: 0;
+              list-style-type: none;
+              display: grid;
+              grid: "lp-thread" auto "lp-poster" auto "lp-date" auto / auto;
+
+              .lp-date {
+                grid-area: lp-date;
+              }
+
+              .lp-thread {
+                grid-area: lp-thread;
+              }
+
+              .lp-poster {
+                grid-area: lp-poster;
+              }
+            }
+          }
+        }
+
+        #category-3 {
+
+          .forum-3 {
+            padding: 4rem;
+            grid-column: 1/3;
+            background: url(https://assets.codepen.io/4400499/09-Cabinet-of-Curiosities-01x7.png) right -10px/650px no-repeat, $black;
+            border-radius: 50px;
+
+            h4 {
+              margin: 0;
+
+              a {
+                font-size: 2.5rem;
+
+                &:hover {
+                  font-family: $font-accent;
+                }
+              }
+            }
+
+            p {
+              width: 43%;
+            }
+
+            .f-inner {
+              @include inner-border;
+            }
+          }
+
+          .forum-4 {
+            position: absolute;
+            right: 1rem;
+            bottom: 1rem;
+            width: 275px;
+            border-radius: 50px 0 50px 0;
+            padding: 2rem;
+
+            .f-inner {
+              @include inner-border;
+              border-radius: 35px 0 35px 0;
+              width: calc(100% - 1.75rem);
+              height: calc(100% - 1.75rem); // FIX: was 1.75em (unit mismatch)
+              top: 0.75rem;
+              left: 0.75rem;
+              pointer-events: none;
+            }
+
+            h4 {
+              margin: 0 0 0.25em 0;
+              font-size: 1.25rem;
+            }
+
+            p {
+              display: none;
+            }
+
+            ul {
+              font-size: 0.8rem;
+            }
+          }
+        }
+
+        #category-4 {
+          grid: " . . " auto "regi res" auto "data data" auto / 1fr 1fr;
+          gap: 0 2rem;
+          margin-top: 2rem;
+
+          div[class*="forum-"] {
+            border-radius: 50px;
+          }
+
+          .forum-5 {
+            grid-area: regi;
+            padding: 4rem;
+
+            &:after {
+              @include inner-border;
+              content: " ";
+              display: block;
+            }
+          }
+
+          .forum-6 {
+            grid-area: data;
+            padding: 0;
+            background: transparent;
+
+            .subf-container {
+              display: grid;
+              grid: auto / repeat(4, 1fr);
+              margin-bottom: 1.5rem;
+
+              div {
+                font-family: $font1;
+                letter-spacing: 0.1ch;
+                display: flex;
+                justify-content: center;
+                align-content: center;
+                align-items: center;
+                background: var(--classImage);
+                height: 200px;
+                position: relative;
+                transition: 0.3s;
+
+                &:hover {
+                  filter: grayscale(75%);
+                }
+
+                a {
+                  position: absolute;
+                  width: 100%;
+                  height: 100%;
+                  cursor: pointer;
+                }
+
+                h5 {
+                  margin: 0;
+                  background: $black;
+                  padding: 5px;
+                  font-size: 0.6rem;
+                }
+              }
+
+              .wakewalker {
+                --classImage: url(https://assets.codepen.io/4400499/gem1.png) center/contain no-repeat;
+
+                h5 {
+                  transform: rotate(5deg);
+                }
+              }
+
+              .dreamers {
+                --classImage: url(https://assets.codepen.io/4400499/gem2.png) center/contain no-repeat;
+
+                h5 {
+                  transform: rotate(-5deg);
+                }
+              }
+
+              .arisen {
+                --classImage: url(https://assets.codepen.io/4400499/gem4.png) center/contain no-repeat;
+
+                h5 {
+                  transform: rotate(5deg);
+                }
+              }
+
+              .sleepwalker {
+                --classImage: url(https://assets.codepen.io/4400499/gem32.png) center/contain no-repeat;
+
+                h5 {
+                  transform: rotate(-5deg);
+                }
+              }
+            }
+
+            h4 {
+              margin: 1.5rem 0 -3.5rem;
+              padding: 0;
+              text-align: center;
+
+              a {
+                font-family: $font2;
+                font-size: 5rem;
+              }
+            }
+
+            .desc {
+              display: none;
+            }
+
+            ul {
+              display: none;
+              justify-content: center;
+              // FIX: 3 named columns need 3 column tracks (was `/ auto`,
+              // which invalidates the whole grid declaration)
+              grid: "lp-thread lp-poster lp-date" auto / auto auto auto;
+              margin-bottom: 2rem;
+
+              li {
+                margin-right: 1em;
+              }
+            }
+          }
+
+          .forum-9 {
+            grid-area: res;
+            padding: 4rem;
+            background: url(https://assets.codepen.io/4400499/serpentum-draconum-01-03x1.png) left -1rem bottom -50px/575px no-repeat, $black;
+
+            &:after {
+              @include inner-border;
+              content: " ";
+              display: block;
+            }
+          }
+        }
+
+        #category-7 {
+          margin-top: 3rem;
+
+          .f-container {
+            display: grid;
+            grid: auto / 1fr 1fr;
+            grid-column: 1/3;
+            padding: 2rem;
+            background: $black;
+            border-radius: 50px;
+
+            div[class*="forum-"] {
+              background: transparent;
+            }
+
+            .forum-10 {
+              padding: 2rem;
+            }
+
+            .forum-11 {
+              padding: 2rem;
+              border-bottom: 1px solid $white;
+              border-left: 1px solid $white;
+              z-index: 4;
+            }
+
+            .forum-12 {
+              padding: 2rem;
+              grid-area: 3/2/4/3;
+              border-left: 1px solid $white;
+            }
+
+            .forum-catfiller7 {
+              padding: 0;
+              grid-area: 3/1/4/2;
+
+              .catfiller7-img {
+                background: url(https://assets.codepen.io/4400499/01-Palmistry-Occult-06x1.png) -115px 0px/640px no-repeat;
+                height: 305px;
+                width: 500px;
+                border-radius: 0 0 0 35px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                pointer-events: none;
+              }
+            }
+          }
+
+          .cf-inner7 {
+            border: 1px solid $white;
+            position: absolute;
+            border-radius: 35px;
+            pointer-events: none;
+            width: calc(100% - 4rem);
+            height: calc(100% - 11.5rem);
+            z-index: 5;
+            left: 2rem;
+            bottom: 2rem;
+          }
+
+          .cf-accent7 {
+            // FIX: removed `content: " "` — no-op outside ::before/::after
+            display: block;
+            background: url(https://assets.codepen.io/4400499/medieval-botany-01-08x2.png) 0/180px no-repeat;
+            position: absolute;
+            top: 80px;
+            right: -95px;
+            width: 250px;
+            height: 250px;
+            z-index: 6;
+            transform: rotate(20deg);
+            pointer-events: none;
+          }
+        }
+
+        #category-5 {
+          padding: 0;
+          margin-top: 3rem;
+
+          h3 {
+            grid-column: 1/3;
+          }
+
+          .forum-container {
+            grid-column: 1/3;
+            display: grid;
+            grid: "comm north" auto "east west" auto "south elsewhere" auto ". ." auto / 1fr 1fr;
+            border-radius: 50px;
+            padding: 2rem;
+
+            div[class*="forum-"]:nth-child(-n+3) {
+              border-top: 1px solid $white;
+            }
+
+            div[class*="forum-"] {
+              background: transparent;
+              padding: 2rem;
+              border-bottom: 1px solid $white;
+            }
+
+            div[class*="forum-"]:nth-last-of-type(odd) {
+              border-right: 1px solid $white;
+              border-left: 1px solid $white;
+            }
+
+            div[class*="forum-"]:nth-last-of-type(even) {
+              border-right: 1px solid $white;
+            }
+
+            div[class*="forum-"]:nth-last-of-type(2) {
+              grid-column: 1/3;
+              border-left: 1px solid $white;
+              border-radius: 0 0 35px 35px;
+
+              &:after {
+                content: " ";
+                display: block;
+                background: url(https://assets.codepen.io/4400499/BANANA_1x1.png) 90px 0/350px no-repeat;
+                height: 320px;
+                width: 325px;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                border-radius: 0 0 35px 0;
+              }
+            }
+
+            .forum-68 {
+              grid-area: comm;
+              border-top-left-radius: 35px;
+            }
+
+            .forum-16 {
+              grid-area: north;
+              border-top-right-radius: 35px;
+            }
+
+            .forum-17 {
+              grid-area: east;
+            }
+
+            .forum-18 {
+              grid-area: west;
+            }
+
+            .forum-19 {
+              grid-area: south;
+            }
+
+            .forum-20 {
+              grid-area: elsewhere;
+              border-left: 0 !important; // FIX: was `0px!important`
+            }
+          }
+        }
+
+        #category-6 {
+          margin-top: 3rem;
+
+          &:after {
+            @include inner-border;
+            content: " ";
+            height: calc(100% - 185px);
+            top: 152px;
+          }
+
+          .forum-container {
+            border-radius: 50px;
+            grid-column: 1/3;
+            display: grid;
+            grid: auto / 1fr 1fr;
+
+            .forum-38 {
+
+              .f-inner {
+                position: absolute;
+                bottom: -100%;
+                left: 0;
+                width: 100%;
+                height: 105%;
+                pointer-events: none;
+                opacity: 0.7;
+              }
+            }
+
+            .forum-39 {
+              border-left: 1px solid $white;
+              border-bottom: 1px solid $white;
+            }
+
+            .forum-40 {
+              border-left: 1px solid $white;
+              grid-column: 2/3;
+            }
+
+            .forum-69 {
+              grid-column: 1/3;
+              border-top: 1px solid $white;
+            }
+          }
+        }
+      }
+    }
+  }
+}

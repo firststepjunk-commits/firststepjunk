@@ -1,0 +1,187 @@
+@import "tailwindcss";
+@import "./aos.css";
+@import "./team-comic.css";
+
+@theme {
+  /* ---- Material 3 color tokens (from original build) ---- */
+  --color-primary: #003e1c;
+  --color-on-primary: #fff;
+  --color-primary-container: #1e5631;
+  --color-on-primary-container: #8fca9b;
+  --color-primary-fixed: #b5f1bf;
+
+  --color-secondary: #506600;
+  --color-secondary-container: #caee5d;
+  --color-on-secondary-container: #546b00;
+  --color-secondary-fixed: #ccf05f;
+  --color-on-secondary-fixed: #161e00;
+
+  --color-surface: #fcf9f8;
+  --color-on-surface: #1b1c1c;
+  --color-on-surface-variant: #414941;
+  --color-surface-variant: #e5e2e1;
+  --color-surface-container-lowest: #fff;
+  --color-surface-container-low: #f6f3f2;
+  --color-surface-container-high: #eae7e7;
+  --color-background: #fcf9f8;
+
+  --color-outline-variant: #c0c9be;
+  --color-error: #ba1a1a;
+  --color-on-error: #fff;
+  --color-white: #fff;
+  --color-gray-300: #d1d5dc;
+
+  /* ---- Spacing tokens ---- */
+  --spacing-margin-mobile: 16px;
+  --spacing-margin-desktop: 80px;
+  --spacing-gutter: 24px;
+  --spacing-section-gap: 120px;
+
+  /* ---- Type scale (M3) ---- */
+  --text-display-lg: 48px;
+  --text-display-lg--line-height: 1.1;
+  --text-display-lg--font-weight: 700;
+  --text-display-lg--letter-spacing: -0.02em;
+
+  --text-headline-lg: 32px;
+  --text-headline-lg--line-height: 1.2;
+  --text-headline-lg--font-weight: 600;
+
+  --text-body-md: 18px;
+  --text-body-md--line-height: 1.6;
+  --text-body-md--font-weight: 400;
+
+  --text-label-sm: 14px;
+  --text-label-sm--line-height: 1;
+  --text-label-sm--font-weight: 500;
+
+  /* ---- Animations ---- */
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-slow: float 9s ease-in-out infinite;
+  --animate-float-slower: float 12s ease-in-out infinite;
+  --animate-bob: bob 4s ease-in-out infinite;
+  --animate-fade-in-up: fade-in-up 0.9s ease-out both;
+  /* Submission feedback micro-animations (success pop + ring, error shake) */
+  --animate-success-pop: success-pop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  --animate-success-ring: success-ring 0.9s ease-out 0.15s both;
+  --animate-error-in: error-in 0.45s ease-out both;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-16px); }
+}
+@keyframes bob {
+  0%, 100% { transform: translateY(0) rotate(var(--bob-rotate, 0deg)); }
+  50% { transform: translateY(10px) rotate(var(--bob-rotate, 0deg)); }
+}
+@keyframes fade-in-up {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+/* Success check pops in with a springy overshoot (the cubic-bezier over-
+   shoots past 1), while the circle behind it emits a soft expanding ring. */
+@keyframes success-pop {
+  0% { opacity: 0; transform: scale(0.2); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes success-ring {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-secondary) 45%, transparent); }
+  100% { box-shadow: 0 0 0 28px transparent; }
+}
+/* Error banner fades up then gives a short attention shake. */
+@keyframes error-in {
+  0% { opacity: 0; transform: translateY(8px); }
+  55% { opacity: 1; transform: translate(0, 0); }
+  70% { transform: translateX(-5px); }
+  85% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+/* Accessibility: no motion for users who asked for none — feedback still
+   appears instantly, and scrollIntoView falls back to an instant jump. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  .animate-success-pop, .animate-success-ring, .animate-error-in { animation: none; }
+}
+
+/* ---- Font-family utilities (M3 type roles) ---- */
+@utility font-body-md { font-family: var(--font-inter); }
+@utility font-display-lg { font-family: var(--font-work-sans); }
+@utility font-headline-lg { font-family: var(--font-work-sans); }
+@utility font-label-sm { font-family: var(--font-jetbrains-mono); }
+
+/* ---- Container (matches original responsive max-widths) ---- */
+.container { width: 100%; }
+@media (min-width: 40rem) { .container { max-width: 40rem; } }
+@media (min-width: 48rem) { .container { max-width: 48rem; } }
+@media (min-width: 64rem) { .container { max-width: 64rem; } }
+@media (min-width: 80rem) { .container { max-width: 80rem; } }
+@media (min-width: 96rem) { .container { max-width: 96rem; } }
+
+/* Base styles live in @layer base so Tailwind utilities (p-*, m-*, mx-auto,
+   space-y-*, text-* sizing on icons, etc.) always win the cascade. Do NOT add
+   an unlayered `* { margin:0; padding:0 }` reset — Tailwind v4 preflight already
+   handles box-sizing/margins, and unlayered rules override every layered utility. */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Scroll-reveal animations park elements off to the side before they fire
+       — [data-aos="fade-left"] sits at translate(100px). On a phone that hangs
+       a full-width card past the right edge and the whole page scrolls
+       sideways. `clip` (not `hidden`) kills that scroll without creating a
+       scroll container, so the sticky navbar keeps sticking. */
+    overflow-x: clip;
+  }
+  body {
+    overflow-x: clip;
+    font-family: var(--font-inter);
+    background: var(--color-background);
+    color: var(--color-on-surface);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .material-symbols-outlined {
+    font-family: "Material Symbols Outlined";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar { width: 4px; height: 4px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: #003e1c; border-radius: 10px; }
+
+/* ---- Splide gallery (brand theme overrides) ---- */
+.splide__arrow {
+  background: var(--color-primary);
+  opacity: 1;
+  height: 2.75rem;
+  width: 2.75rem;
+}
+.splide__arrow:hover:not(:disabled) {
+  background: var(--color-secondary);
+}
+.splide__arrow svg { fill: #fff; height: 1.1em; width: 1.1em; }
+.splide__arrow:disabled { opacity: 0.35; }
+.splide__pagination { bottom: -1.75rem; }
+.splide__pagination__page {
+  background: var(--color-outline-variant);
+  opacity: 1;
+}
+.splide__pagination__page.is-active {
+  background: var(--color-primary);
+  transform: scale(1.4);
+}

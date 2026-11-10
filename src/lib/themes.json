@@ -1,0 +1,201 @@
+{
+  "$comment": "THEME CATALOG — single source of truth. Ships inside every clone (used by Settings → Theming + <ThemeStyle/>), read by factory/generate.mjs, and copied into the intake webform at build (factory/intake-app `sync-themes`). Entries besides `master` are PLACEHOLDERS — replace `vars`, `css`, `fonts`, `preview` with your own pre-provided CSS themes. `vars` = simple palette for swatch previews in pickers. `css` = the actual override map: keys are CSS custom properties from src/app/globals.css @theme, applied verbatim. `preview` may point to an image (e.g. /themes/<id>.webp); when null pickers render a color mock.",
+  "themes": [
+    {
+      "id": "master",
+      "name": "Master (First Step green)",
+      "style": "The master template's stock look — deep forest green, chartreuse accents",
+      "preview": null,
+      "fonts": { "heading": "Work Sans", "body": "Inter" },
+      "vars": {
+        "primary": "#003e1c",
+        "accent": "#caee5d",
+        "bg": "#fcf9f8",
+        "surface": "#fff",
+        "text": "#1b1c1c",
+        "muted": "#414941"
+      },
+      "css": {
+        "--color-primary": "#003e1c",
+        "--color-primary-container": "#1e5631",
+        "--color-on-primary-container": "#8fca9b",
+        "--color-primary-fixed": "#b5f1bf",
+        "--color-secondary": "#506600",
+        "--color-secondary-container": "#caee5d",
+        "--color-on-secondary-container": "#546b00",
+        "--color-secondary-fixed": "#ccf05f",
+        "--color-on-secondary-fixed": "#161e00",
+        "--color-surface": "#fcf9f8",
+        "--color-background": "#fcf9f8"
+      }
+    },
+    {
+      "id": "slate-ember",
+      "name": "Slate & Ember",
+      "style": "Clean trade pro — dark charcoal, ember-orange calls to action",
+      "preview": null,
+      "fonts": { "heading": "Work Sans", "body": "Inter" },
+      "vars": {
+        "primary": "#7c3a12",
+        "accent": "#f2a33c",
+        "bg": "#faf7f4",
+        "surface": "#fff",
+        "text": "#1f2429",
+        "muted": "#5c6670"
+      },
+      "css": {
+        "--color-primary": "#7c3a12",
+        "--color-primary-container": "#a34e1a",
+        "--color-on-primary-container": "#ffb98a",
+        "--color-primary-fixed": "#ffd9be",
+        "--color-secondary": "#5c5347",
+        "--color-secondary-container": "#f2a33c",
+        "--color-on-secondary-container": "#4a3410",
+        "--color-secondary-fixed": "#ffe0a8",
+        "--color-on-secondary-fixed": "#241a05",
+        "--color-surface": "#faf7f4",
+        "--color-background": "#faf7f4"
+      }
+    },
+    {
+      "id": "harbor",
+      "name": "Harbor",
+      "style": "Trustworthy classic — deep navy, clear sky-blue accents",
+      "preview": null,
+      "fonts": { "heading": "Work Sans", "body": "Inter" },
+      "vars": {
+        "primary": "#0d3556",
+        "accent": "#3ba0e0",
+        "bg": "#f7fafc",
+        "surface": "#fff",
+        "text": "#16222e",
+        "muted": "#54646f"
+      },
+      "css": {
+        "--color-primary": "#0d3556",
+        "--color-primary-container": "#134a77",
+        "--color-on-primary-container": "#9cc9ef",
+        "--color-primary-fixed": "#cfe6fb",
+        "--color-secondary": "#4b5b68",
+        "--color-secondary-container": "#a8d4f2",
+        "--color-on-secondary-container": "#123954",
+        "--color-secondary-fixed": "#cde9ff",
+        "--color-on-secondary-fixed": "#0a1c2b",
+        "--color-surface": "#f7fafc",
+        "--color-background": "#f7fafc"
+      }
+    },
+    {
+      "id": "evergreen",
+      "name": "Evergreen",
+      "style": "Earthy & dependable — forest green with warm moss highlights",
+      "preview": null,
+      "fonts": { "heading": "Work Sans", "body": "Inter" },
+      "vars": {
+        "primary": "#184a2c",
+        "accent": "#8fb339",
+        "bg": "#f8faf5",
+        "surface": "#fff",
+        "text": "#1c261e",
+        "muted": "#5b6a5e"
+      },
+      "css": {
+        "--color-primary": "#184a2c",
+        "--color-primary-container": "#22633b",
+        "--color-on-primary-container": "#96d3a8",
+        "--color-primary-fixed": "#bff0cc",
+        "--color-secondary": "#566300",
+        "--color-secondary-container": "#cbe97a",
+        "--color-on-secondary-container": "#3c4a00",
+        "--color-secondary-fixed": "#dbf291",
+        "--color-on-secondary-fixed": "#171f00",
+        "--color-surface": "#f8faf5",
+        "--color-background": "#f8faf5"
+      }
+    },
+    {
+      "id": "sunbeam",
+      "name": "Sunbeam",
+      "style": "Friendly & bright — warm amber over cool slate text",
+      "preview": null,
+      "fonts": { "heading": "Work Sans", "body": "Inter" },
+      "vars": {
+        "primary": "#7a5a00",
+        "accent": "#2d3e50",
+        "bg": "#fffdf6",
+        "surface": "#fff",
+        "text": "#26303a",
+        "muted": "#6a7480"
+      },
+      "css": {
+        "--color-primary": "#7a5a00",
+        "--color-primary-container": "#a37c0a",
+        "--color-on-primary-container": "#ffe08a",
+        "--color-primary-fixed": "#ffefc2",
+        "--color-secondary": "#2d3e50",
+        "--color-secondary-container": "#c2d6ea",
+        "--color-on-secondary-container": "#1d2b3a",
+        "--color-secondary-fixed": "#d8e8f8",
+        "--color-on-secondary-fixed": "#0e1822",
+        "--color-surface": "#fffdf6",
+        "--color-background": "#fffdf6"
+      }
+    },
+    {
+      "id": "graphite-mint",
+      "name": "Graphite Mint",
+      "style": "Modern minimal — near-black graphite, crisp mint accent",
+      "preview": null,
+      "fonts": { "heading": "Work Sans", "body": "Inter" },
+      "vars": {
+        "primary": "#14181b",
+        "accent": "#2fbf8f",
+        "bg": "#f7f9f9",
+        "surface": "#fff",
+        "text": "#1b2124",
+        "muted": "#5f6b70"
+      },
+      "css": {
+        "--color-primary": "#14181b",
+        "--color-primary-container": "#2b3438",
+        "--color-on-primary-container": "#b7c4ca",
+        "--color-primary-fixed": "#dde6ea",
+        "--color-secondary": "#1f5c48",
+        "--color-secondary-container": "#93e6c7",
+        "--color-on-secondary-container": "#0d3f2f",
+        "--color-secondary-fixed": "#b5f2d9",
+        "--color-on-secondary-fixed": "#04170f",
+        "--color-surface": "#f7f9f9",
+        "--color-background": "#f7f9f9"
+      }
+    },
+    {
+      "id": "brick-and-cream",
+      "name": "Brick & Cream",
+      "style": "Classic local business — brick red on soft cream",
+      "preview": null,
+      "fonts": { "heading": "Work Sans", "body": "Inter" },
+      "vars": {
+        "primary": "#6e2318",
+        "accent": "#d98e32",
+        "bg": "#fbf7f0",
+        "surface": "#fffdf9",
+        "text": "#2b2320",
+        "muted": "#6e625c"
+      },
+      "css": {
+        "--color-primary": "#6e2318",
+        "--color-primary-container": "#8c2f20",
+        "--color-on-primary-container": "#ffb4a3",
+        "--color-primary-fixed": "#ffdad2",
+        "--color-secondary": "#6b5340",
+        "--color-secondary-container": "#f0c48f",
+        "--color-on-secondary-container": "#4a3413",
+        "--color-secondary-fixed": "#ffe2b8",
+        "--color-on-secondary-fixed": "#251a06",
+        "--color-surface": "#fbf7f0",
+        "--color-background": "#fbf7f0"
+      }
+    }
+  ]
+}

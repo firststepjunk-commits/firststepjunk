@@ -1,0 +1,23 @@
+{
+  "name": "site-factory-intake",
+  "private": true,
+  "version": "1.0.0",
+  "description": "MDX webform version of factory/INTAKE_FORM.md — produces intake.json for factory/generate.mjs",
+  "scripts": {
+    "sync-themes": "node -e \"require('node:fs').copyFileSync(require('node:path').join(__dirname,'..','..','src','lib','themes.json'), require('node:path').join(__dirname,'themes.gen.json'))\"",
+    "sync-designs": "node -e \"require('node:fs').copyFileSync(require('node:path').join(__dirname,'..','design-templates','registry.json'), require('node:path').join(__dirname,'designs.gen.json'))\"",
+    "predev": "npm run sync-themes && npm run sync-designs",
+    "prebuild": "npm run sync-themes && npm run sync-designs",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@mdx-js/loader": "^3.1.0",
+    "@mdx-js/react": "^3.1.0",
+    "@next/mdx": "16.2.9",
+    "next": "16.2.9",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  }
+}

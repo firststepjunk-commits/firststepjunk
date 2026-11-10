@@ -1,0 +1,136 @@
+import { IntakeForm, Section, Field, Row, SubmitBar, ThemePicker, DesignPicker } from "../components/intake";
+
+# Site Factory — Intake
+
+Answer every question below. Required fields are marked ★ — the generator
+refuses to run without them. Everything else improves the clone but can be
+fixed later. Submitting stores the answers in Netlify Forms **and** hands you
+a ready-to-run `intake.json` for `factory/generate.mjs`.
+
+<IntakeForm>
+
+<Section title="A. Business identity">
+  <Field name="legalName" label="Legal name" required
+    hint="Exactly as registered — goes in schema + footer."
+    placeholder="FirstStep Junk Removal LLC" />
+  <Field name="brandName" label="Brand name" required
+    hint="The public-facing name used in headlines."
+    placeholder="First Step Junk Removal" />
+  <Field name="shortName" label="Short name" required
+    hint="Casual name for email subjects & small UI."
+    placeholder="First Step Junk" />
+  <Field name="primaryService" label="Primary service phrase" required
+    hint={'Lowercase, reads naturally mid-sentence: "…interested in ___".'}
+    placeholder="junk removal" />
+  <Field name="gbpCategory" label="Google Business Profile primary category" required
+    hint="Pick the real GBP category."
+    placeholder="Junk removal service" />
+</Section>
+
+<Section title="B. Owner (powers /about + Person schema)">
+  <Field name="ownerFirstName" label="Owner first name" required
+    hint="Used across the site & CRM."
+    placeholder="Michael" />
+  <Field name="ownerBioFacts" label="Owner bio facts" type="textarea" rows={4}
+    hint="3–5 short facts, one per line: years in trade, prior work, what they personally handle, licensing/insurance. Used in the copy pass, not by the generator." />
+</Section>
+
+The owner headshot is a real photo file — it replaces
+`public/images/gallery/g09.webp` during the copy-polish pass, so nothing to
+upload here.
+
+<Section title="C. Contact">
+  <Row>
+    <Field name="phoneDigits" label="Phone" required type="tel"
+      hint="10 digits, no punctuation."
+      placeholder="7797721857" />
+    <Field name="email" label="Email" required type="email"
+      hint="The business inbox (quote notifications go here too)."
+      placeholder="owner@business.com" />
+  </Row>
+</Section>
+
+<Section title="D. Location & service area">
+  <Row>
+    <Field name="city" label="City" required
+      hint="The anchor city for local SEO."
+      placeholder="Rockford" />
+    <Field name="state" label="State" required
+      hint="2-letter code."
+      placeholder="IL" />
+  </Row>
+  <Field name="areaServed" label="Area served" type="textarea" rows={5}
+    hint={'One "Town, ST" per line — 6–8 max, real coverage only.'}
+    placeholder={"Rockford, IL\nLoves Park, IL\nBelvidere, IL"} />
+  <Row>
+    <Field name="latitude" label="Latitude"
+      hint="City centroid from Google Maps."
+      placeholder="42.2711" />
+    <Field name="longitude" label="Longitude"
+      hint="Right-click the map → copy coordinates."
+      placeholder="-89.094" />
+  </Row>
+</Section>
+
+<Section title="E. Hours">
+  <Row>
+    <Field name="opens" label="Opens" hint="24h format." placeholder="07:30" />
+    <Field name="closes" label="Closes" hint="24h format." placeholder="19:30" />
+  </Row>
+</Section>
+
+Days default to all 7 — edit `src/lib/seo.js` in the clone if not daily.
+
+<Section title="F. Web presence">
+  <Field name="domain" label="Domain" required
+    hint="Production domain, no protocol — use the planned domain even if not purchased yet."
+    placeholder="firststepjunk.com" />
+  <Field name="instagram" label="Instagram URL" type="url"
+    hint="Leave blank to get a neutral placeholder."
+    placeholder="https://www.instagram.com/…" />
+  <Field name="facebook" label="Facebook URL" type="url"
+    hint="Leave blank to get a neutral placeholder."
+    placeholder="https://www.facebook.com/…" />
+  <Field name="mapsUrl" label="Google Maps / GBP URL" type="url"
+    hint="Leave blank to get a neutral placeholder."
+    placeholder="https://www.google.com/maps/place/…" />
+  <Field name="gaMeasurementId" label="GA4 measurement ID"
+    hint="Blank disables analytics until set in Netlify env."
+    placeholder="G-XXXXXXXXXX" />
+</Section>
+
+<Section title="G. Voice (optional)">
+  <Field name="crmReplyLine" label="CRM reply line"
+    hint="One warm sentence used in draft reply emails. Blank keeps a generic version of the master's line." />
+  <Field name="extraReplacements" label="Extra replacements" type="textarea" rows={4}
+    hint={'Any additional literal swaps, one per line:  old text => new text  (e.g. a competitor name in copy, a special town spelling).'} />
+</Section>
+
+<Section title="H. Theme (optional — defaults to the master's look)">
+  Pick the visual theme for the new site. Colors and fonts shown are the real
+  values the generator will apply. Not locked in — the owner can switch any
+  time later in the site's **Settings → Theming**.
+  <ThemePicker />
+</Section>
+
+<Section title="I. Design template (optional — defaults to the master layout)">
+  A design is the whole layout — structure, type, imagery — a separate axis
+  from the color theme above. Filter by who the site is for, then pick.
+  **Auto-applied** designs are baked in by the generator; **applied after
+  generation** designs are recorded in the intake and swapped in by hand from
+  `factory/design-templates/` as a follow-up step.
+  <DesignPicker />
+</Section>
+
+<SubmitBar />
+
+</IntakeForm>
+
+## J. Not asked here on purpose
+
+Handled in `FINISH_SETUP.md` after generation — never through this form:
+
+- **Admin password** — the generator writes a `changeme-…` placeholder; the
+  owner sets the real one directly in `src/lib/content-data.js`.
+- **Apps Script URL + read token** — produced when the Google backend is deployed.
+- **Photos, prices, testimonials, FAQ copy** — the `COPY_BRIEF.md` polish pass.

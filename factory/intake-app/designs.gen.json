@@ -1,0 +1,45 @@
+{
+  "$comment": "DESIGN TEMPLATE LIBRARY index — full designs (layout+type+imagery), separate axis from src/lib/themes.json color themes. Generator/intake offer design x theme. 'for' = audience tags the intake picker filters on. status: live=shipping in clones (generator applies), draft=collected/normalized (applied by hand after generation), incoming=announced.",
+  "designs": [
+    {
+      "id": "master",
+      "name": "Master (First Step stock)",
+      "style": "Clean local-service marketing site",
+      "for": ["local-service", "trades", "any"],
+      "audience": "Any local service business — junk removal, hauling, cleanouts, trades",
+      "stack": "next+tailwind",
+      "source": "src/ (the master template itself — do not modify)",
+      "status": "live"
+    },
+    {
+      "id": "ambrosia",
+      "name": "Ambrosia",
+      "style": "Ornate modern-fantasy board index — script display type, inner-border cards, collage art, grid category layouts",
+      "for": ["community", "creative"],
+      "audience": "Communities, fan hubs, creative collectives",
+      "stack": "jsx+scss (standalone, data-driven)",
+      "source": "factory/design-templates/ambrosia/",
+      "status": "draft"
+    },
+    {
+      "id": "mayqueen",
+      "name": "May Queen",
+      "style": "Dark grunge-zine board index — sticky identity bar, hero banner, image forum cards, board-stats dashboard; layout-flip tokens (auto-fit grid, 1fr/2fr splits, clamp type), dark+light themes",
+      "for": ["community", "creative"],
+      "audience": "Communities & zines that want a darker, punk look",
+      "stack": "jsx+scss (standalone, data-driven)",
+      "source": "factory/design-templates/mayqueen/",
+      "status": "draft"
+    },
+    {
+      "id": "angele",
+      "name": "Angele",
+      "style": "Music-artist landing page — gradient hero with animated slider, outlined display type, tour-date list, full-bleed video grid with modal player, album tracklist, newsletter/socials",
+      "for": ["artist", "creative"],
+      "audience": "Artists & music acts",
+      "stack": "jsx+scss (standalone, data-driven; interactions are React state — no external JS)",
+      "source": "factory/design-templates/angele/",
+      "status": "draft"
+    }
+  ]
+}

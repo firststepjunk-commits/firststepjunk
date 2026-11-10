@@ -1,0 +1,5 @@
+Contact: mailto:firststep.junk@gmail.com
+Contact: tel:+17797721857
+Expires: 2027-07-13T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://firststepjunk.com/.well-known/security.txt

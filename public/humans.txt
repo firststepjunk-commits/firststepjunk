@@ -1,0 +1,18 @@
+/* Team */
+
+/* SITE */
+Site: firststepjunk.com
+Name: FirstStep Junk Removal LLC
+Description: Junk removal, debris removal, dumpster rental, and waste management serving Rockford, IL.
+Location: Rockford, Illinois, United States
+Phone: (779) 772-1857
+Email: firststep.junk@gmail.com
+Hours: Mon-Sun 7:30 AM - 7:30 PM
+
+/* SOCIAL */
+Instagram: https://www.instagram.com/firststep_junkremoval/
+Facebook: https://www.facebook.com/profile.php?id=61589040134967
+Google: https://www.google.com/maps/place/FirstStep+Junk+Removal+LLC/data=!4m2!3m1!1s0x0:0xc09e203e15b1f205
+
+/* THANKS */
+Built for Rockford homeowners and businesses who need clutter gone - same day when possible.
