@@ -22,13 +22,14 @@ export const BUSINESS = {
   phone: "+17797721857",
   phoneDisplay: "(779) 772-1857",
   email: "firststep.junk@gmail.com",
-  priceRange: "$$",
+  priceRange: "$75-$425",
   areaServed: [
     "Rockford, IL",
     "Loves Park, IL",
     "Machesney Park, IL",
     "Belvidere, IL",
     "Roscoe, IL",
+    "Rockton, IL",
     "Cherry Valley, IL",
     "Winnebago County, IL",
   ],
@@ -65,14 +66,13 @@ export const BUSINESS = {
     mapsUrl:
       "https://www.google.com/maps/place/FirstStep+Junk+Removal+LLC/@42.2711,-89.0940,15z/data=!4m2!3m1!1s0x0:0xc09e203e15b1f205",
     ratingValue: 5,
-    reviewCount: 10,
+    reviewCount: 14,
   },
   /**
-   * The service menu. Deliberately price-free: every job is quoted on what the
-   * customer actually has, so nothing here (or in the JSON-LD built from it)
-   * publishes a number we'd be held to.
+   * Label shown next to each item in the "what we haul" list. Pricing is by
+   * load size (see PRICE_TIERS below), so every item is covered by the tiers.
    */
-  quoteLabel: "Contact for inquiry",
+  quoteLabel: "Priced by load · from $75",
   offers: [
     { name: "Curbside Pickup" },
     { name: "Recliner Chair Removal" },
@@ -96,6 +96,7 @@ export const BUSINESS = {
     "Construction debris hauling",
     "Yard waste removal",
     "Office cleanouts",
+    "Shed demolition",
   ],
   keywords: [
     "junk removal Rockford IL",
@@ -107,9 +108,46 @@ export const BUSINESS = {
     "appliance removal Rockford",
     "estate cleanout Rockford",
     "construction debris removal Rockford",
+    "shed demolition Rockford IL",
+    "curbside junk pickup Rockford",
+    "garage cleanout Rockford IL",
+    "junk removal Loves Park IL",
+    "junk removal Machesney Park IL",
+    "junk removal Belvidere IL",
+    "junk removal Roscoe IL",
+    "junk removal Rockton IL",
+    "junk removal Cherry Valley IL",
     "FirstStep Junk Removal",
   ],
 };
+
+/**
+ * Owner-set rates (single source of truth — used on the homepage, every
+ * service/town page, JSON-LD, and llms files). Change prices here only.
+ * All rates include labor, pickup, hauling, and all dump fees.
+ */
+export const PRICE_TIERS = [
+  { name: "Small load", price: "$75–$125", min: 75, max: 125, detail: "A few items or bags" },
+  { name: "1/4 load", price: "$150", amount: 150, detail: "About a quarter of our trailer" },
+  { name: "1/2 load", price: "$250", amount: 250, detail: "About half of our trailer" },
+  { name: "3/4 load", price: "$350", amount: 350, detail: "About three-quarters of our trailer" },
+  { name: "Full load", price: "$425", amount: 425, detail: "Flat rate for the full 10×6 ft trailer with 4 ft walls" },
+];
+
+export const SHED_DEMO = {
+  name: "Shed demolition",
+  price: "$725",
+  amount: 725,
+  detail:
+    "Flat rate for a standard empty wood 10×12 shed — demolition, hauling, and disposal. A concrete slab is quoted separately.",
+};
+
+export const PRICING_INCLUDES =
+  "Every rate includes labor, pickup, hauling, and all dump fees.";
+export const MATTRESS_NOTE =
+  "Mattresses and box springs are extra — the landfill fee is separate.";
+export const PRICE_SUMMARY =
+  "Junk removal starts at $75, and a full load is a $425 flat rate that includes labor, pickup, hauling, and all dump fees.";
 
 /** "Rockford, IL" — derived once; use for labels instead of hardcoding. */
 export const CITY_STATE = `${BUSINESS.address.addressLocality}, ${BUSINESS.address.addressRegion}`;
@@ -119,7 +157,7 @@ export const FAQ_ITEMS = [
   {
     question: "How much does junk removal cost in Rockford, IL?",
     answer:
-      "Every job is quoted individually — cost depends on what you have, how much of it there is, and how hard it is to reach. FirstStep Junk Removal LLC gives a free, no-obligation estimate before any work starts, and the quote you get is the price you pay. Call or text (779) 772-1857, or send photos through the quote form, for a same-day answer.",
+      "Junk removal in Rockford starts at $75. Pricing is by how much of our 10×6 ft trailer your junk fills: small load $75–$125, 1/4 load $150, 1/2 load $250, 3/4 load $350, and a full load is a $425 flat rate. Every rate includes labor, pickup, hauling, and all dump fees. Mattresses and box springs are extra because the landfill fee is separate. Call or text (779) 772-1857, or send photos through the quote form, to confirm your price before we start.",
   },
   {
     question: "Do you offer same-day junk pickup in Rockford?",
@@ -129,7 +167,7 @@ export const FAQ_ITEMS = [
   {
     question: "What areas do you serve near Rockford?",
     answer:
-      "We serve Rockford, Loves Park, Machesney Park, Belvidere, Roscoe, Cherry Valley, and the greater Winnebago County area. If you are nearby and unsure, call (779) 772-1857 — we will confirm coverage quickly.",
+      "We serve Rockford, Loves Park, Machesney Park, Belvidere, Roscoe, Rockton, Cherry Valley, and the greater Winnebago County area. If you are nearby and unsure, call (779) 772-1857 — we will confirm coverage quickly.",
   },
   {
     question: "What items will junk removal services not take?",
@@ -144,9 +182,47 @@ export const FAQ_ITEMS = [
   {
     question: "How do I get a free junk removal quote?",
     answer:
-      "Request a free quote on firststepjunk.com, or call/text (779) 772-1857. Photos of your junk help us price faster. We give transparent, no-obligation estimates — the quote you get is the price you pay.",
+      "Request a free quote on firststepjunk.com, or call/text (779) 772-1857. Photos of your junk help us price faster. We give transparent, no-obligation estimates, and our flat load rates include all dump fees.",
   },
 ];
+
+/** Offers with real prices for each load-size tier and shed demolition. */
+export function buildTierOffers() {
+  const mk = (name, priceFields, description) => ({
+    "@type": "Offer",
+    name,
+    description,
+    priceCurrency: "USD",
+    ...priceFields,
+    availability: "https://schema.org/InStock",
+    areaServed: "Rockford, IL",
+    itemOffered: {
+      "@type": "Service",
+      name: `Junk removal — ${name}`,
+      provider: { "@id": `${SITE_URL}/#business` },
+      areaServed: { "@type": "City", name: "Rockford, IL" },
+    },
+  });
+  return [
+    ...PRICE_TIERS.map((t) =>
+      mk(
+        t.name,
+        t.amount
+          ? { price: String(t.amount) }
+          : {
+              priceSpecification: {
+                "@type": "PriceSpecification",
+                minPrice: t.min,
+                maxPrice: t.max,
+                priceCurrency: "USD",
+              },
+            },
+        `${t.detail}. ${PRICING_INCLUDES}`
+      )
+    ),
+    mk(SHED_DEMO.name, { price: String(SHED_DEMO.amount) }, SHED_DEMO.detail),
+  ];
+}
 
 export function buildLocalBusinessJsonLd() {
   const { openingHours, google, offers, social, address, geo } = BUSINESS;
@@ -207,10 +283,9 @@ export function buildLocalBusinessJsonLd() {
           },
         }
       : {}),
-    // No `price`/`priceCurrency` anywhere below: the site quotes per job, and
-    // an Offer is valid without a price. Publishing one here would put a
-    // number in front of customers that we never actually committed to.
-    makesOffer: offers.map((offer) => ({
+    // Load-size pricing (owner-set flat rates, see PRICE_TIERS) plus the
+    // per-item service menu, which is covered by those same rates.
+    makesOffer: [...buildTierOffers(), ...offers.map((offer) => ({
       "@type": "Offer",
       name: offer.name,
       availability: "https://schema.org/InStock",
@@ -224,7 +299,7 @@ export function buildLocalBusinessJsonLd() {
           name: "Rockford, IL",
         },
       },
-    })),
+    }))],
     ...(offers.length
       ? {
           hasOfferCatalog: {
@@ -317,6 +392,12 @@ export function buildServiceJsonLd() {
     { name: "Junk removal", url: `${SITE_URL}/junk-removal-rockford` },
     { name: "Couch removal", url: `${SITE_URL}/couch-removal-rockford` },
     { name: "Same-day junk pickup", url: `${SITE_URL}/same-day-junk-pickup-rockford` },
+    { name: "Furniture removal", url: `${SITE_URL}/furniture-removal-rockford` },
+    { name: "Appliance removal", url: `${SITE_URL}/appliance-removal-rockford` },
+    { name: "Estate cleanouts", url: `${SITE_URL}/estate-cleanout-rockford` },
+    { name: "Garage & basement cleanouts", url: `${SITE_URL}/garage-basement-cleanout-rockford` },
+    { name: "Shed demolition", url: `${SITE_URL}/shed-demolition-rockford` },
+    { name: "Curbside pickup", url: `${SITE_URL}/curbside-pickup-rockford` },
   ];
 
   const fromCatalog = BUSINESS.serviceTypes

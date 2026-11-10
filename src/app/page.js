@@ -9,6 +9,7 @@ import Gallery from "@/components/Gallery";
 import Team from "@/components/Team";
 import FaqSection from "@/components/FaqSection";
 import QuoteSection from "@/components/QuoteSection";
+import ServiceAreas from "@/components/ServiceAreas";
 import Footer from "@/components/Footer";
 import { getContent } from "@/lib/content";
 
@@ -31,6 +32,7 @@ export default async function Home() {
       <Team content={content} />
       <FaqSection content={content} />
       <QuoteSection content={content} />
+      <ServiceAreas />
       <Footer content={content} />
     </>
   );

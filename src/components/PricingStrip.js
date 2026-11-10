@@ -1,15 +1,16 @@
 import { defaultContent } from "@/lib/content-data";
 import { BUSINESS } from "@/lib/seo";
+import PriceTierGrid from "@/components/PriceTierGrid";
 
 /**
- * Visible service menu. Every line reads "Contact for inquiry" rather than a
- * number — pricing is per job, and the JSON-LD built from the same list is
- * price-free too so the page and the schema never disagree.
+ * Pricing section: the owner's flat-rate load tiers (single source of truth in
+ * lib/seo.js), followed by the per-item "what we haul" list. Every item is
+ * covered by the load rates, so each row shows the starting price instead of a
+ * "contact" label.
  */
 export default function PricingStrip({ content }) {
   const p = { ...defaultContent.pricing, ...(content?.pricing || {}) };
   const offers = BUSINESS.offers;
-  const quoteLabel = p.quoteLabel || BUSINESS.quoteLabel;
 
   return (
     <section className="border-y border-outline-variant/30 bg-white py-section-gap" id="pricing">
@@ -18,7 +19,14 @@ export default function PricingStrip({ content }) {
           <h2 className="font-headline-lg text-headline-lg text-primary">{p.heading}</h2>
           <p className="mt-3 text-on-surface-variant">{p.intro}</p>
         </div>
-        <ul className="grid grid-cols-1 gap-x-10 gap-y-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div data-aos="fade-up">
+          <PriceTierGrid />
+        </div>
+
+        <h3 className="mt-14 text-xl font-bold text-primary" data-aos="fade-up">
+          What we haul
+        </h3>
+        <ul className="mt-4 grid grid-cols-1 gap-x-10 gap-y-4 sm:grid-cols-2 lg:grid-cols-3">
           {offers.map((offer, i) => (
             <li
               key={offer.name}
@@ -31,7 +39,7 @@ export default function PricingStrip({ content }) {
                 href="#quote"
                 className="shrink-0 font-semibold text-secondary underline-offset-4 hover:underline"
               >
-                {quoteLabel}
+                {BUSINESS.quoteLabel}
               </a>
             </li>
           ))}

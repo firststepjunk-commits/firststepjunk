@@ -1,5 +1,6 @@
 import { SITE_URL } from "@/lib/seo";
 import { SERVICE_PAGES, OWNER } from "@/lib/service-pages";
+import { TOWN_PAGES } from "@/lib/town-pages";
 
 /**
  * Public sitemap only — back-office routes omitted:
@@ -20,6 +21,12 @@ export default function sitemap() {
       lastModified,
       changeFrequency: "monthly",
       priority: 0.9,
+    })),
+    ...TOWN_PAGES.map((page) => ({
+      url: `${SITE_URL}${page.path}`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.8,
     })),
     {
       url: `${SITE_URL}${OWNER.path}`,

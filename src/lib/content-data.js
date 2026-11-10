@@ -88,10 +88,10 @@ export const defaultContent = {
   pricing: {
     heading: "Junk Removal Pricing in Rockford, IL",
     intro:
-      "Every job is different, so we quote every job. Tell us what needs to go and you'll get a free, no-obligation price up front — and the quote you get is the price you pay.",
-    quoteLabel: "Contact for inquiry",
+      "Simple flat rates based on how much of our 10×6 ft trailer your junk fills. Junk removal starts at $75, and every rate includes labor, pickup, hauling, and all dump fees.",
+    quoteLabel: "Priced by load · from $75",
     footnote:
-      "Single items, mixed loads, and full cleanouts are all quoted per job — call or text (779) 772-1857, or send photos through the form, for a free estimate.",
+      "Mattresses and box springs are extra (landfill fee is separate). Not sure how much you have? Call or text (779) 772-1857, or send photos through the form, and we'll confirm your price before we start.",
   },
 
   faq: {
@@ -231,6 +231,10 @@ export const defaultContent = {
       { label: "Junk Removal Rockford", href: "/junk-removal-rockford" },
       { label: "Couch Removal", href: "/couch-removal-rockford" },
       { label: "Same-Day Pickup", href: "/same-day-junk-pickup-rockford" },
+      { label: "Furniture Removal", href: "/furniture-removal-rockford" },
+      { label: "Appliance Removal", href: "/appliance-removal-rockford" },
+      { label: "Estate Cleanouts", href: "/estate-cleanout-rockford" },
+      { label: "Shed Demolition", href: "/shed-demolition-rockford" },
       { label: "About Michael", href: "/about" },
       { label: "Get a Quote", href: "/#quote" },
     ],

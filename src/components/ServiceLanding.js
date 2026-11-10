@@ -3,12 +3,12 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BUSINESS, CITY_STATE } from "@/lib/seo";
-import { SERVICE_PAGES } from "@/lib/service-pages";
+import ServiceAreas from "@/components/ServiceAreas";
+import PriceTierGrid from "@/components/PriceTierGrid";
 import { defaultContent } from "@/lib/content-data";
 
 export default function ServiceLanding({ page }) {
   const content = defaultContent;
-  const others = SERVICE_PAGES.filter((p) => p.slug !== page.slug);
 
   return (
     <>
@@ -50,6 +50,15 @@ export default function ServiceLanding({ page }) {
           </div>
         </section>
 
+        <section className="border-b border-outline-variant/30 bg-white">
+          <ul className="container mx-auto grid grid-cols-2 gap-4 px-margin-mobile py-5 text-center text-sm font-semibold text-primary md:grid-cols-4 md:px-margin-desktop">
+            <li>★ {BUSINESS.google.ratingValue.toFixed(1)} on Google · {BUSINESS.google.reviewCount} reviews</li>
+            <li>Licensed &amp; Fully Insured</li>
+            <li>Open daily 7:30 AM–7:30 PM</li>
+            <li>Flat rates from $75 · dump fees included</li>
+          </ul>
+        </section>
+
         <section className="py-section-gap">
           <div className="container mx-auto max-w-3xl px-margin-mobile md:px-margin-desktop">
             <h2 className="font-headline-lg text-headline-lg text-primary">What you get</h2>
@@ -81,12 +90,27 @@ export default function ServiceLanding({ page }) {
           </div>
         </section>
 
+        <section className="bg-surface-container-low py-section-gap" id="pricing">
+          <div className="container mx-auto max-w-4xl px-margin-mobile md:px-margin-desktop">
+            <h2 className="font-headline-lg text-headline-lg text-primary">Pricing</h2>
+            <p className="mt-2 mb-8 text-on-surface-variant">
+              Simple flat rates based on how much of our 10×6 ft trailer your junk fills.
+            </p>
+            <PriceTierGrid compact />
+            <p className="mt-6">
+              <a href="/#quote" className="font-semibold text-secondary underline-offset-4 hover:underline">
+                Get a free quote →
+              </a>
+            </p>
+          </div>
+        </section>
+
         <section className="py-section-gap">
           <div className="container mx-auto max-w-3xl px-margin-mobile md:px-margin-desktop">
             <h2 className="font-headline-lg text-headline-lg text-primary">What we haul</h2>
             <p className="mt-2 text-on-surface-variant">
-              Every job is quoted on what you actually have. Ask about any of these and
-              you&apos;ll get a free, upfront price before we start.
+              Ask about any of these — it&apos;s all covered by our load-size rates, and we
+              confirm your price before we start.
             </p>
             <ul className="mt-8">
               {page.relatedServices.map((service) => (
@@ -121,33 +145,15 @@ export default function ServiceLanding({ page }) {
           </div>
         </section>
 
+        <ServiceAreas excludeSlug={page.slug} />
+
         <section className="py-section-gap">
           <div className="container mx-auto px-margin-mobile md:px-margin-desktop">
-            <h2 className="font-headline-lg text-headline-lg text-primary">
-              Related {BUSINESS.address.addressLocality} services
-            </h2>
-            <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {others.map((p) => (
-                <li key={p.slug}>
-                  <a
-                    href={p.path}
-                    className="block border-b border-outline-variant/40 py-3 font-semibold text-primary transition-colors hover:text-secondary"
-                  >
-                    {p.title}
-                  </a>
-                </li>
-              ))}
-              <li>
-                <a
-                  href="/about"
-                  className="block border-b border-outline-variant/40 py-3 font-semibold text-primary transition-colors hover:text-secondary"
-                >
-                  About the owner — {BUSINESS.owner}
-                </a>
-              </li>
-            </ul>
-            <p className="mt-10 text-on-surface-variant">
-              Questions? Call{" "}
+            <p className="text-on-surface-variant">
+              <a className="font-semibold text-primary" href="/about">
+                About the owner — {BUSINESS.owner}
+              </a>
+              {" · "}Questions? Call{" "}
               <a className="font-semibold text-primary" href={`tel:${BUSINESS.phone}`}>
                 {BUSINESS.phoneDisplay}
               </a>{" "}
