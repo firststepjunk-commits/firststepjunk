@@ -1,10 +1,11 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import WhyUs from "@/components/WhyUs";
+import Reviews from "@/components/Reviews";
 import Services from "@/components/Services";
+import RigSection from "@/components/RigSection";
+import Process from "@/components/Process";
+import WhyUs from "@/components/WhyUs";
 import PricingStrip from "@/components/PricingStrip";
-import CtaBanner from "@/components/CtaBanner";
-import DisasterCards from "@/components/DisasterCards";
 import Gallery from "@/components/Gallery";
 import Team from "@/components/Team";
 import FaqSection from "@/components/FaqSection";
@@ -23,11 +24,12 @@ export default async function Home() {
     <>
       <Navbar content={content} />
       <Hero content={content} />
-      <WhyUs content={content} />
-      <Services content={content} />
+      <Reviews />
+      <Services />
+      <RigSection />
+      <Process />
       <PricingStrip content={content} />
-      <CtaBanner content={content} />
-      <DisasterCards content={content} />
+      <WhyUs content={content} />
       <Gallery content={content} />
       <Team content={content} />
       <FaqSection content={content} />

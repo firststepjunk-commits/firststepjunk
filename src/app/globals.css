@@ -38,6 +38,11 @@
   --spacing-section-gap: 120px;
 
   /* ---- Type scale (M3) ---- */
+  --text-display-xl: 68px;
+  --text-display-xl--line-height: 1.02;
+  --text-display-xl--font-weight: 800;
+  --text-display-xl--letter-spacing: -0.03em;
+
   --text-display-lg: 48px;
   --text-display-lg--line-height: 1.1;
   --text-display-lg--font-weight: 700;

@@ -62,10 +62,9 @@ export default function Team({ content }) {
                     m.name
                   )}
                 </h3>
-                <p className="mb-3 font-label-sm text-label-sm uppercase tracking-wider text-secondary">
+                <p className="font-label-sm text-label-sm uppercase tracking-wider text-secondary">
                   {m.role}
                 </p>
-                <p className="text-sm leading-relaxed text-on-surface-variant">{m.bio}</p>
                 {m.name === "Michael" ? (
                   <a
                     href="/about"

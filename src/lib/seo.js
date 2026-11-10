@@ -433,12 +433,37 @@ export function buildServiceJsonLd() {
   return [...dedicatedLd, ...fromCatalog];
 }
 
+export function buildReviewJsonLd() {
+  // Real reviews only, verbatim from the Google Business Profile.
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "Review",
+      author: { "@type": "Person", name: "Hunter Brooks" },
+      reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5 },
+      reviewBody:
+        "5 stars is an understatement!! I highly recommend you call these guys for any junk removal needs.",
+      itemReviewed: { "@id": `${SITE_URL}/#business` },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Review",
+      author: { "@type": "Person", name: "Chill brah" },
+      reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5 },
+      reviewBody:
+        "Very friendly, fair priced and great interaction. The team at firststep got the job done fast!",
+      itemReviewed: { "@id": `${SITE_URL}/#business` },
+    },
+  ];
+}
+
 export function buildAllJsonLd() {
   return [
     buildOrganizationJsonLd(),
     buildLocalBusinessJsonLd(),
     buildWebSiteJsonLd(),
     buildFaqPageJsonLd(),
+    ...buildReviewJsonLd(),
     ...buildServiceJsonLd(),
   ];
 }
