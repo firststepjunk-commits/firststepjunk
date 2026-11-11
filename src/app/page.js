@@ -2,6 +2,8 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Reviews from "@/components/Reviews";
 import Services from "@/components/Services";
+import WeHaul from "@/components/WeHaul";
+import MobileStickyBar from "@/components/MobileStickyBar";
 import RigSection from "@/components/RigSection";
 import Process from "@/components/Process";
 import WhyUs from "@/components/WhyUs";
@@ -26,6 +28,7 @@ export default async function Home() {
       <Hero content={content} />
       <Reviews />
       <Services />
+      <WeHaul />
       <RigSection />
       <Process />
       <PricingStrip content={content} />
@@ -36,6 +39,10 @@ export default async function Home() {
       <QuoteSection content={content} />
       <ServiceAreas />
       <Footer content={content} />
+      {/* Sticky mobile bar (mobile only) + a same-height spacer in the
+          footer's dark green so the bar never covers footer content. */}
+      <MobileStickyBar />
+      <div aria-hidden="true" className="h-16 bg-primary md:hidden" />
     </>
   );
 }

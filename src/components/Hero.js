@@ -6,6 +6,7 @@ import { defaultContent } from "@/lib/content-data";
 import { BUSINESS } from "@/lib/seo";
 import {
   ArrowRightIcon,
+  CameraIcon,
   CheckIcon,
   ClockIcon,
   PhoneIcon,
@@ -140,6 +141,18 @@ export default function Hero({ content }) {
             >
               <PhoneIcon className="h-6 w-6" />
               Call {BUSINESS.phoneDisplay}
+            </a>
+          </div>
+
+          {/* Third, quieter path: text a photo. He already quotes from photos,
+              and texting is the fastest way for a visitor to get a price. */}
+          <div className="pt-1">
+            <a
+              href={`sms:${BUSINESS.phone}`}
+              className="group inline-flex items-center gap-2 text-[15px] font-bold text-primary hover:underline"
+            >
+              <CameraIcon className="h-5 w-5" />
+              or text us a photo of your pile — fastest way to a price
             </a>
           </div>
 

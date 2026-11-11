@@ -75,3 +75,177 @@ export function ArrowRightIcon({ className = "h-4 w-4" }) {
     </svg>
   );
 }
+
+/**
+ * Extra icons for the "We haul almost anything" section and the
+ * text-a-photo / mobile sticky-bar actions. Same rule as above: plain
+ * inline SVGs, never a font ligature. These are simple stroke shapes
+ * (feather-style) drawn from basic rects and paths, so they render
+ * identically everywhere.
+ */
+function StrokeIcon({ className = "h-5 w-5", children }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      className={className}
+    >
+      {children}
+    </svg>
+  );
+}
+
+export function MessageIcon({ className = "h-5 w-5" }) {
+  return (
+    <StrokeIcon className={className}>
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+    </StrokeIcon>
+  );
+}
+
+export function CameraIcon({ className = "h-5 w-5" }) {
+  return (
+    <StrokeIcon className={className}>
+      <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+      <circle cx="12" cy="13" r="4" />
+    </StrokeIcon>
+  );
+}
+
+export function InfoIcon({ className = "h-5 w-5" }) {
+  return (
+    <StrokeIcon className={className}>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 11v5" />
+      <path d="M12 7.5h.01" />
+    </StrokeIcon>
+  );
+}
+
+export function ArmchairIcon({ className = "h-5 w-5" }) {
+  return (
+    <StrokeIcon className={className}>
+      <rect x="7" y="3" width="10" height="8" rx="1" />
+      <path d="M5 11h14v6H5z" />
+      <path d="M7 17v3M17 17v3" />
+    </StrokeIcon>
+  );
+}
+
+export function SofaIcon({ className = "h-5 w-5" }) {
+  return (
+    <StrokeIcon className={className}>
+      <rect x="3" y="4" width="18" height="7" rx="1" />
+      <path d="M2 11h20v6H2z" />
+      <path d="M5 17v3M19 17v3" />
+    </StrokeIcon>
+  );
+}
+
+export function MattressIcon({ className = "h-5 w-5" }) {
+  return (
+    <StrokeIcon className={className}>
+      <rect x="2" y="9" width="20" height="8" rx="2" />
+      <path d="M2 13h20" />
+      <rect x="5" y="5" width="5" height="4" rx="1" />
+    </StrokeIcon>
+  );
+}
+
+export function FridgeIcon({ className = "h-5 w-5" }) {
+  return (
+    <StrokeIcon className={className}>
+      <rect x="6" y="2" width="12" height="20" rx="1" />
+      <path d="M6 10h12" />
+      <path d="M15 5v3M15 13v3" />
+    </StrokeIcon>
+  );
+}
+
+export function PianoIcon({ className = "h-5 w-5" }) {
+  return (
+    <StrokeIcon className={className}>
+      <rect x="2" y="5" width="20" height="11" rx="1" />
+      <path d="M2 13h20" />
+      <path d="M6 13v3M10 13v3M14 13v3M18 13v3" />
+      <path d="M5 16v4M19 16v4" />
+    </StrokeIcon>
+  );
+}
+
+export function ShedIcon({ className = "h-5 w-5" }) {
+  return (
+    <StrokeIcon className={className}>
+      <path d="M3 11L12 4l9 7" />
+      <path d="M5 10v10h14V10" />
+      <path d="M10 20v-5h4v5" />
+    </StrokeIcon>
+  );
+}
+
+export function FenceIcon({ className = "h-5 w-5" }) {
+  return (
+    <StrokeIcon className={className}>
+      <path d="M4 4v16M9 4v16M14 4v16M19 4v16" />
+      <path d="M2 9h20M2 15h20" />
+    </StrokeIcon>
+  );
+}
+
+export function TreeIcon({ className = "h-5 w-5" }) {
+  return (
+    <StrokeIcon className={className}>
+      <circle cx="12" cy="8" r="5" />
+      <path d="M12 13v8" />
+      <path d="M8 21h8" />
+    </StrokeIcon>
+  );
+}
+
+export function BricksIcon({ className = "h-5 w-5" }) {
+  return (
+    <StrokeIcon className={className}>
+      <rect x="2" y="4" width="9" height="6" />
+      <rect x="13" y="4" width="9" height="6" />
+      <rect x="7" y="14" width="9" height="6" />
+      <rect x="2" y="14" width="3" height="6" />
+      <rect x="18" y="14" width="4" height="6" />
+    </StrokeIcon>
+  );
+}
+
+export function HomeIcon({ className = "h-5 w-5" }) {
+  return (
+    <StrokeIcon className={className}>
+      <path d="M3 11l9-8 9 8" />
+      <path d="M5 10v10h14V10" />
+      <path d="M10 20v-5h4v5" />
+      <path d="M17 4v4" />
+    </StrokeIcon>
+  );
+}
+
+export function StorageIcon({ className = "h-5 w-5" }) {
+  return (
+    <StrokeIcon className={className}>
+      <rect x="4" y="3" width="16" height="18" rx="1" />
+      <path d="M4 8h16M4 13h16M4 18h16" />
+      <rect x="10" y="10" width="4" height="3" />
+    </StrokeIcon>
+  );
+}
+
+export function BoxIcon({ className = "h-5 w-5" }) {
+  return (
+    <StrokeIcon className={className}>
+      <path d="M21 8l-9-5-9 5v8l9 5 9-5V8z" />
+      <path d="M3 8l9 5 9-5" />
+      <path d="M12 13v8" />
+    </StrokeIcon>
+  );
+}
