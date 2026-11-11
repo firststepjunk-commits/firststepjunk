@@ -9,6 +9,7 @@ import {
   CameraIcon,
   CheckIcon,
   ClockIcon,
+  MessageIcon,
   PhoneIcon,
   ShieldCheckIcon,
   StarIcon,
@@ -137,10 +138,10 @@ export default function Hero({ content }) {
             </a>
             <a
               className="inline-flex w-full items-center justify-center gap-2.5 rounded-xl border-2 border-primary bg-white px-10 py-5 text-lg font-extrabold uppercase tracking-wide text-primary shadow-sm transition-all hover:scale-[1.02] hover:bg-primary hover:text-on-primary active:scale-95 sm:w-auto sm:min-w-[230px]"
-              href={`tel:${BUSINESS.phone}`}
+              href={`sms:${BUSINESS.phone}`}
             >
-              <PhoneIcon className="h-6 w-6" />
-              Call {BUSINESS.phoneDisplay}
+              <MessageIcon className="h-6 w-6" />
+              Text Us {BUSINESS.phoneDisplay}
             </a>
           </div>
 
