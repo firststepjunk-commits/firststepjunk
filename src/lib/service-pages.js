@@ -806,19 +806,19 @@ export const SERVICE_PAGES = [
       "TV removal in Rockford, IL — $40 each for disposal. Old TVs hauled away and recycled. Free quote — call (779) 772-1857.",
     h1: "TV Removal in Rockford, IL",
     answerFirst:
-      "FirstStep Junk Removal LLC removes old TVs in Rockford, IL — any size, from any room. TVs are $40 each for disposal, on top of your load price, and they're taken to a local electronics recycler. Call or text (779) 772-1857 for a free quote.",
+      "FirstStep Junk Removal LLC removes old TVs in Rockford, IL — any size, from any room. TVs are $40 each for disposal, with our $90 minimum applying — so 1–2 TVs are $90 total. They're taken to a local electronics recycler. Call or text (779) 772-1857 for a free quote.",
     intro:
       "That old TV is heavy, awkward, and can't go in the trash. We carry it out and take it to a local electronics recycler.",
     bullets: [
       "TVs of any size — tube, flat-screen, and big screens",
-      "$40 each for disposal, on top of your load price",
+      "$40 each for disposal — 1–2 TVs are $90 total with our minimum",
       "Carried out from any room, including basements and upstairs",
       "Taken to a local electronics recycler",
       "Free upfront price before we load — starting at $90",
     ],
     howItWorks: [
       "Tell us how many TVs you have and where they are.",
-      "We confirm your price — load rate plus $40 per TV.",
+      "We confirm your price — $40 per TV, with the $90 minimum for 1–2 TVs.",
       "Crew arrives in the scheduled window and carries them out.",
       "We haul them to the recycler.",
     ],
@@ -832,7 +832,7 @@ export const SERVICE_PAGES = [
       {
         question: "How much does TV removal cost in Rockford?",
         answer:
-          "TVs are $40 each for disposal, on top of your load price. Load rates start at $90 for a small load and run to a $425 flat rate for a full trailer load, dump fees included. Tell us how many TVs you have and we'll confirm your total before we start.",
+          "TVs are $40 each for disposal. Our $90 minimum applies, so 1–2 TVs are $90 total; 3 or more are $40 each. Mixed with other junk, the $40 per TV is added to your load price. Load rates start at $90 for a small load and run to a $425 flat rate for a full trailer load, dump fees included. Tell us how many TVs you have and we'll confirm your total before we start.",
       },
       {
         question: "Do you take old tube TVs?",

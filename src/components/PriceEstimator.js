@@ -29,8 +29,10 @@ import {
  * Shed demolition ($725 flat) and pianos are NOT in the estimator — the shed
  * has its own tier card below, and the piano ballpark isn't a locked price.
  *
- * Minimum charge is $90 (the small-load floor). Each TV adds a $40 disposal
- * fee on top of the volume price, shown as its own line in the estimate.
+ * Minimum charge is $90 (the small-load floor) — a floor, never added on
+ * top. Each TV is $40 for disposal: TVs alone cost max($90, $40 × count),
+ * so 1–2 TVs are $90 total. TVs mixed with other items add $40 each on top
+ * of the volume price, shown as its own line in the estimate.
  */
 
 const ITEMS = [
@@ -69,14 +71,19 @@ export default function PriceEstimator() {
   const fillPct = Math.min(totalEighths, 8) / 8 * 100;
   const totalItems = ITEMS.reduce((sum, item) => sum + counts[item.key], 0);
 
-  // TV disposal: $40 per TV, on top of the volume price. The volume price is
-  // the tier's flat amount, or the $90 small-load floor when the tier is a
-  // range — so a tiny load never prices below the $90 minimum.
+  // TV disposal: $40 per TV. The $90 minimum is a FLOOR, never added on top
+  // of the TV fees: TVs alone cost max($90, $40 × count), so 1–2 TVs are
+  // $90 total. TVs mixed with other items add $40 each on top of the volume
+  // price, as before. The volume price is the tier's flat amount, or the $90
+  // small-load floor when the tier is a range.
+  const MINIMUM_FEE = PRICE_TIERS[0].min; // $90 small-load floor
   const TV_DISPOSAL_FEE = 40;
   const tvCount = counts.tv;
   const tvFee = tvCount * TV_DISPOSAL_FEE;
+  const tvOnly = tvCount > 0 && totalItems === tvCount;
   const volumePrice = tier ? (tier.amount ?? tier.min) : 0;
-  const totalPrice = volumePrice + tvFee;
+  const totalPrice = tvOnly ? Math.max(MINIMUM_FEE, tvFee) : volumePrice + tvFee;
+  const floorApplies = tvOnly && tvFee < MINIMUM_FEE;
 
   function bump(key, delta) {
     setCounts((prev) => ({ ...prev, [key]: Math.max(0, Math.min(9, prev[key] + delta)) }));
@@ -160,17 +167,33 @@ export default function PriceEstimator() {
                   Your estimate
                 </p>
                 <p className="mt-3 text-4xl font-extrabold">${totalPrice}</p>
-                <p className="mt-1 font-bold">{tier.name}</p>
+                <p className="mt-1 font-bold">{tvOnly ? "TV disposal" : tier.name}</p>
                 {tvCount > 0 ? (
                   <div className="mt-4 space-y-1 border-t border-on-primary/20 pt-4 text-sm font-semibold text-on-primary/90">
-                    <div className="flex items-center justify-between gap-3">
-                      <span>Load · {tier.name}</span>
-                      <span>${volumePrice}</span>
-                    </div>
-                    <div className="flex items-center justify-between gap-3">
-                      <span>TV disposal $40 × {tvCount}</span>
-                      <span>${tvFee}</span>
-                    </div>
+                    {tvOnly ? (
+                      <>
+                        <div className="flex items-center justify-between gap-3">
+                          <span>TV disposal $40 × {tvCount}</span>
+                          <span>${tvFee}</span>
+                        </div>
+                        {floorApplies ? (
+                          <p className="pt-1 font-normal leading-relaxed text-on-primary/80">
+                            Our $90 minimum applies — 1–2 TVs are $90 total.
+                          </p>
+                        ) : null}
+                      </>
+                    ) : (
+                      <>
+                        <div className="flex items-center justify-between gap-3">
+                          <span>Load · {tier.name}</span>
+                          <span>${volumePrice}</span>
+                        </div>
+                        <div className="flex items-center justify-between gap-3">
+                          <span>TV disposal $40 × {tvCount}</span>
+                          <span>${tvFee}</span>
+                        </div>
+                      </>
+                    )}
                   </div>
                 ) : null}
                 <div className="mt-5">
