@@ -24,7 +24,7 @@ export default function RigSection() {
           <p className="mt-4 max-w-lg text-lg leading-relaxed text-on-surface-variant">
             Our 10×6 ft dump trailer with 4 ft walls does the heavy lifting. A full load is a
             $425 flat rate — labor, pickup, hauling, and dump fees included. Smaller loads are
-            priced by the space they take, from $75.
+            priced by the space they take, from $90.
           </p>
           <a
             href="#pricing"

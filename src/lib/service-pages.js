@@ -10,7 +10,7 @@ import {
 /** Shared cost FAQ so every page quotes the same owner-set rates. */
 const costFaq = (question, lead) => ({
   question,
-  answer: `${lead} ${PRICE_SUMMARY} Small loads run $75–$125, 1/4 load $150, 1/2 load $250, and 3/4 load $350. ${MATTRESS_NOTE} Call or text (779) 772-1857 or send a photo to confirm your price before we start.`,
+  answer: `${lead} ${PRICE_SUMMARY} Small loads run $90–$125, 1/4 load $150, 1/2 load $250, and 3/4 load $350. ${MATTRESS_NOTE} Call or text (779) 772-1857 or send a photo to confirm your price before we start.`,
 });
 
 /** Indexable Rockford service landing pages (public — included in sitemap). */
@@ -31,12 +31,12 @@ export const SERVICE_PAGES = [
       "Residential and commercial junk hauling",
       "Estate, garage, basement, and office cleanouts",
       "Construction debris and yard waste (non-hazardous)",
-      "Flat-rate pricing from $75 — a full load is $425 flat, dump fees included",
+      "Flat-rate pricing from $90 — a full load is $425 flat, dump fees included",
       "Serving Rockford, Loves Park, Machesney Park, Belvidere, Roscoe, Rockton, and Cherry Valley",
     ],
     howItWorks: [
       "Call, text, or request a quote online with photos.",
-      "We confirm your price before we start — flat rates from $75.",
+      "We confirm your price before we start — flat rates from $90.",
       "Our crew loads carefully and leaves the area broom-clean.",
       "We dispose of non-hazardous materials responsibly.",
     ],
@@ -56,7 +56,7 @@ export const SERVICE_PAGES = [
       {
         question: "How much does junk removal cost in Rockford?",
         answer:
-          "Junk removal in Rockford starts at $75. A full load (our 10×6 ft trailer with 4 ft walls) is a $425 flat rate, and that price includes labor, pickup, hauling, and all dump fees. Smaller loads: small load $75–$125, 1/4 load $150, 1/2 load $250, 3/4 load $350. Mattresses and box springs are extra because the landfill fee is separate. Call or text (779) 772-1857 or send a photo and we'll confirm your price before we start.",
+          "Junk removal in Rockford starts at $90. A full load (our 10×6 ft trailer with 4 ft walls) is a $425 flat rate, and that price includes labor, pickup, hauling, and all dump fees. Smaller loads: small load $90–$125, 1/4 load $150, 1/2 load $250, 3/4 load $350. Mattresses and box springs are extra because the landfill fee is separate. Call or text (779) 772-1857 or send a photo and we'll confirm your price before we start.",
       },
       {
         question: "What areas do you serve?",
@@ -85,7 +85,7 @@ export const SERVICE_PAGES = [
       "Sectional sofa disposal",
       "Recliner chair removal",
       "We navigate stairs and tight doorways with care",
-      "Free upfront price before we load — starting at $75",
+      "Free upfront price before we load — starting at $90",
     ],
     howItWorks: [
       "Send a photo or describe the couch (stairs? sectional?).",
@@ -103,7 +103,7 @@ export const SERVICE_PAGES = [
       {
         question: "How much is couch removal in Rockford, IL?",
         answer:
-          "Couch removal in Rockford is priced by how much of our trailer it takes up, starting at $75: small load $75–$125, 1/4 load $150, 1/2 load $250, 3/4 load $350, and a full load is a $425 flat rate with all dump fees included. A single couch or loveseat is usually a small load; a sectional takes more room. Send a photo through the quote form or call (779) 772-1857 and we'll confirm the price before we lift anything.",
+          "Couch removal in Rockford is priced by how much of our trailer it takes up, starting at $90: small load $90–$125, 1/4 load $150, 1/2 load $250, 3/4 load $350, and a full load is a $425 flat rate with all dump fees included. A single couch or loveseat is usually a small load; a sectional takes more room. Send a photo through the quote form or call (779) 772-1857 and we'll confirm the price before we lift anything.",
       },
       {
         question: "Do you remove sectionals and sleeper sofas?",
@@ -139,7 +139,7 @@ export const SERVICE_PAGES = [
     bullets: [
       "Same-day pickup when openings remain on the board",
       "Open every day 7:30 AM–7:30 PM (America/Chicago)",
-      "Photo quotes speed up pricing — rates start at $75",
+      "Photo quotes speed up pricing — rates start at $90",
       "Single items or full loads",
       "Licensed, insured, locally owned",
     ],
@@ -174,7 +174,7 @@ export const SERVICE_PAGES = [
       {
         question: "Is same-day more expensive?",
         answer:
-          "No — we do not add a rush charge for same-day pickup when a slot is open. Same-day jobs use the same flat rates as any other day, starting at $75, with a full load at $425 flat and all dump fees included.",
+          "No — we do not add a rush charge for same-day pickup when a slot is open. Same-day jobs use the same flat rates as any other day, starting at $90, with a full load at $425 flat and all dump fees included.",
       },
     ],
     image: "/images/crew-at-job-site.jpg",
@@ -185,12 +185,12 @@ export const SERVICE_PAGES = [
     slug: "furniture-removal-rockford",
     path: "/furniture-removal-rockford",
     title: "Furniture Removal in Rockford, IL",
-    metaTitle: "Furniture Removal Rockford IL | From $75 | First Step Junk",
+    metaTitle: "Furniture Removal Rockford IL | From $90 | First Step Junk",
     metaDescription:
-      "Furniture removal in Rockford, IL from $75. Couches, mattresses, tables, dressers and more hauled away. Dump fees included. Call (779) 772-1857.",
+      "Furniture removal in Rockford, IL from $90. Couches, mattresses, tables, dressers and more hauled away. Dump fees included. Call (779) 772-1857.",
     h1: "Furniture Removal in Rockford, IL",
     answerFirst:
-      "FirstStep Junk Removal LLC removes old furniture in Rockford, IL — couches, chairs, tables, dressers, bed frames, desks, and more. Furniture removal starts at $75, and a full trailer load is a $425 flat rate that includes labor, pickup, hauling, and all dump fees. Open daily 7:30 AM–7:30 PM. Call or text (779) 772-1857.",
+      "FirstStep Junk Removal LLC removes old furniture in Rockford, IL — couches, chairs, tables, dressers, bed frames, desks, and more. Furniture removal starts at $90, and a full trailer load is a $425 flat rate that includes labor, pickup, hauling, and all dump fees. Open daily 7:30 AM–7:30 PM. Call or text (779) 772-1857.",
     intro:
       "Replacing a bedroom set, clearing a rental, or finally getting that old dresser out of the basement? We do the lifting, carry it out, and haul it away — you don't need a truck or a dump run.",
     bullets: [
@@ -198,7 +198,7 @@ export const SERVICE_PAGES = [
       "Dressers, tables, desks, bookcases, and bed frames",
       "Mattresses and box springs (extra — landfill fee is separate)",
       "We carry from inside the home, basement, or garage",
-      "Flat rates from $75 — a full load is $425, dump fees included",
+      "Flat rates from $90 — a full load is $425, dump fees included",
     ],
     howItWorks: [
       "Call, text, or send a photo of the furniture through the quote form.",
@@ -237,12 +237,12 @@ export const SERVICE_PAGES = [
     slug: "appliance-removal-rockford",
     path: "/appliance-removal-rockford",
     title: "Appliance Removal in Rockford, IL",
-    metaTitle: "Appliance Removal Rockford IL | From $75 | First Step Junk",
+    metaTitle: "Appliance Removal Rockford IL | From $90 | First Step Junk",
     metaDescription:
-      "Appliance removal in Rockford, IL from $75. Washers, dryers, dishwashers, water heaters and more hauled away, dump fees included. Call (779) 772-1857.",
+      "Appliance removal in Rockford, IL from $90. Washers, dryers, dishwashers, water heaters and more hauled away, dump fees included. Call (779) 772-1857.",
     h1: "Appliance Removal in Rockford, IL",
     answerFirst:
-      "FirstStep Junk Removal LLC hauls away old appliances in Rockford, IL — washers, dryers, dishwashers, water heaters, and other household appliances. Removal starts at $75, and every rate includes labor, pickup, hauling, and all dump fees. Call or text (779) 772-1857 for a quote.",
+      "FirstStep Junk Removal LLC hauls away old appliances in Rockford, IL — washers, dryers, dishwashers, water heaters, and other household appliances. Removal starts at $90, and every rate includes labor, pickup, hauling, and all dump fees. Call or text (779) 772-1857 for a quote.",
     intro:
       "A dead dryer or a retired dishwasher is heavy, awkward, and hard to get to the dump yourself. We disconnect-ready units out, load them, and take them away.",
     bullets: [
@@ -250,7 +250,7 @@ export const SERVICE_PAGES = [
       "Dishwasher removal",
       "Water heater removal",
       "TV removal and electronics recycling",
-      "Flat rates from $75, dump fees included",
+      "Flat rates from $90, dump fees included",
     ],
     howItWorks: [
       "Tell us which appliances you have and where they are (basement, garage, upstairs).",
@@ -333,19 +333,19 @@ export const SERVICE_PAGES = [
     slug: "garage-basement-cleanout-rockford",
     path: "/garage-basement-cleanout-rockford",
     title: "Garage & Basement Cleanout in Rockford, IL",
-    metaTitle: "Garage & Basement Cleanout Rockford IL | From $75",
+    metaTitle: "Garage & Basement Cleanout Rockford IL | From $90",
     metaDescription:
-      "Garage and basement cleanout in Rockford, IL from $75. Full loads are a $425 flat rate, dump fees included. Call (779) 772-1857.",
+      "Garage and basement cleanout in Rockford, IL from $90. Full loads are a $425 flat rate, dump fees included. Call (779) 772-1857.",
     h1: "Garage & Basement Cleanout in Rockford, IL",
     answerFirst:
-      "FirstStep Junk Removal LLC clears garages, basements, attics, and storage spaces in Rockford, IL. Cleanouts start at $75, and a full trailer load is a $425 flat rate that includes labor, pickup, hauling, and all dump fees. Call or text (779) 772-1857.",
+      "FirstStep Junk Removal LLC clears garages, basements, attics, and storage spaces in Rockford, IL. Cleanouts start at $90, and a full trailer load is a $425 flat rate that includes labor, pickup, hauling, and all dump fees. Call or text (779) 772-1857.",
     intro:
       "Get your parking spot, your workshop, or your basement back. We carry out the clutter, load it, and haul it away.",
     bullets: [
       "Garage cleanouts and storage-space clear-outs",
       "Basement and attic cleanouts",
       "Old furniture, boxes, appliances, and household junk",
-      "Pay by load size — from $75 up to a $425 flat full load",
+      "Pay by load size — from $90 up to a $425 flat full load",
       "Dump fees included in every rate",
     ],
     howItWorks: [
@@ -416,7 +416,7 @@ export const SERVICE_PAGES = [
       {
         question: "Does the shed need to be empty?",
         answer:
-          "Yes — the $725 flat rate is for an empty shed. If it has contents, we can haul those separately at our load-size rates, which start at $75.",
+          "Yes — the $725 flat rate is for an empty shed. If it has contents, we can haul those separately at our load-size rates, which start at $90.",
       },
       {
         question: "Do you remove the concrete slab too?",
@@ -433,19 +433,19 @@ export const SERVICE_PAGES = [
     slug: "curbside-pickup-rockford",
     path: "/curbside-pickup-rockford",
     title: "Curbside Junk Pickup in Rockford, IL",
-    metaTitle: "Curbside Junk Pickup Rockford IL | From $75 | First Step",
+    metaTitle: "Curbside Junk Pickup Rockford IL | From $90 | First Step",
     metaDescription:
-      "Curbside junk pickup in Rockford, IL from $75. Set it at the curb and we load and haul it away, dump fees included. Call (779) 772-1857.",
+      "Curbside junk pickup in Rockford, IL from $90. Set it at the curb and we load and haul it away, dump fees included. Call (779) 772-1857.",
     h1: "Curbside Junk Pickup in Rockford, IL",
     answerFirst:
-      "FirstStep Junk Removal LLC offers curbside junk pickup in Rockford, IL. Set your items at the curb or by the driveway and we load and haul them away. Pickup starts at $75, and every rate includes labor, hauling, and all dump fees. Call or text (779) 772-1857.",
+      "FirstStep Junk Removal LLC offers curbside junk pickup in Rockford, IL. Set your items at the curb or by the driveway and we load and haul them away. Pickup starts at $90, and every rate includes labor, hauling, and all dump fees. Call or text (779) 772-1857.",
     intro:
       "Already moved it outside? We'll come load it. Curbside pickup is the quickest, simplest way to clear items out of your yard or driveway.",
     bullets: [
       "Items at the curb, driveway, or yard — we load them",
       "Furniture, appliances, bags, boxes, and debris",
       "Same-day pickup when the schedule allows",
-      "Flat rates from $75, dump fees included",
+      "Flat rates from $90, dump fees included",
       "Open daily 7:30 AM–7:30 PM",
     ],
     howItWorks: [
@@ -544,7 +544,7 @@ export function buildServicePageJsonLd(page) {
         : {
             offers: {
               "@type": "AggregateOffer",
-              lowPrice: "75",
+              lowPrice: "90",
               highPrice: "425",
               priceCurrency: "USD",
             },

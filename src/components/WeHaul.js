@@ -110,7 +110,7 @@ export default function WeHaul() {
           </h2>
           <p className="mt-3 text-lg text-on-surface-variant">
             From a single couch to a full estate cleanout — if it&apos;s junk, we haul it. One
-            trailer, flat rates from $75 to $425 by the space it takes, no surprise fees.
+            trailer, flat rates from $90 to $425 by the space it takes, no surprise fees.
           </p>
         </div>
 

@@ -8,7 +8,7 @@ const STEPS = [
   {
     n: "2",
     title: "Get your flat price",
-    body: "We confirm your price before we start — from $75, a full load $425 flat.",
+    body: "We confirm your price before we start — from $90, a full load $425 flat.",
   },
   {
     n: "3",

@@ -21,8 +21,8 @@ function buildTown(t) {
     slug: `junk-removal-${t.slug}`,
     path,
     title: `Junk Removal in ${area}`,
-    metaTitle: `Junk Removal ${t.name} IL | From $75 | First Step Junk`,
-    metaDescription: `Junk removal in ${area} from $75. Full loads are a $425 flat rate with dump fees included. Licensed & fully insured. Call (779) 772-1857.`,
+    metaTitle: `Junk Removal ${t.name} IL | From $90 | First Step Junk`,
+    metaDescription: `Junk removal in ${area} from $90. Full loads are a $425 flat rate with dump fees included. Licensed & fully insured. Call (779) 772-1857.`,
     h1: `Junk Removal in ${area}`,
     answerFirst: `FirstStep Junk Removal LLC provides junk removal in ${area} for homes and businesses. ${PRICE_SUMMARY} We're based in Rockford and serve ${t.name} in ${t.county}. Open daily 7:30 AM–7:30 PM. Call or text (779) 772-1857.`,
     intro: `${t.name} is ${t.where}, and our crew serves it every day. Furniture, appliances, garage and basement cleanouts, yard debris, and shed demolition — we load it and haul it away.`,
@@ -30,7 +30,7 @@ function buildTown(t) {
       `Junk removal, furniture and appliance hauling in ${t.name}`,
       "Garage, basement, and estate cleanouts",
       "Shed demolition — $725 flat for a standard empty wood 10×12",
-      "Flat rates from $75 — a full load is $425, dump fees included",
+      "Flat rates from $90 — a full load is $425, dump fees included",
       "Same-day pickup when the schedule allows",
     ],
     howItWorks: [
@@ -48,7 +48,7 @@ function buildTown(t) {
     faqs: [
       {
         question: `How much does junk removal cost in ${area}?`,
-        answer: `${PRICE_SUMMARY} Small loads run $75–$125, 1/4 load $150, 1/2 load $250, and 3/4 load $350. ${MATTRESS_NOTE} Call or text (779) 772-1857 or send a photo to confirm your price before we start.`,
+        answer: `${PRICE_SUMMARY} Small loads run $90–$125, 1/4 load $150, 1/2 load $250, and 3/4 load $350. ${MATTRESS_NOTE} Call or text (779) 772-1857 or send a photo to confirm your price before we start.`,
       },
       {
         question: `Do you offer junk removal in ${t.name}?`,

@@ -11,7 +11,7 @@
 ## Canonical pages
 
 - [Home](https://firststepjunk.com/): Services, FAQ, quote request for Rockford junk removal
-- [Pricing section](https://firststepjunk.com/#pricing): Flat rates from $75 — small load $75–$125, 1/4 load $150, 1/2 load $250, 3/4 load $350, full load $425 flat; shed demolition $725 flat
+- [Pricing section](https://firststepjunk.com/#pricing): Flat rates from $90 — small load $90–$125, 1/4 load $150, 1/2 load $250, 3/4 load $350, full load $425 flat; shed demolition $725 flat
 - [FAQ](https://firststepjunk.com/#faq): Cost, same-day pickup, service area, what we will not take
 - [Services](https://firststepjunk.com/#services): Residential and commercial hauling plus pest and repair add-ons
 - Service pages: /junk-removal-rockford, /furniture-removal-rockford, /appliance-removal-rockford, /estate-cleanout-rockford, /garage-basement-cleanout-rockford, /shed-demolition-rockford, /curbside-pickup-rockford, /couch-removal-rockford, /same-day-junk-pickup-rockford

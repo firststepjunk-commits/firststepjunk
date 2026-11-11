@@ -55,7 +55,7 @@ export default function ServiceLanding({ page }) {
             <li>★ {BUSINESS.google.ratingValue.toFixed(1)} on Google · {BUSINESS.google.reviewCount} reviews</li>
             <li>Licensed &amp; Fully Insured</li>
             <li>Open daily 7:30 AM–7:30 PM</li>
-            <li>Flat rates from $75 · dump fees included</li>
+            <li>Flat rates from $90 · dump fees included</li>
           </ul>
         </section>
 

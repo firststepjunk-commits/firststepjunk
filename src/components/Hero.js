@@ -166,7 +166,7 @@ export default function Hero({ content }) {
             </span>
             <span className="font-extrabold text-primary">5.0 · 14 Google reviews</span>
             <span className="text-on-surface-variant">
-              Most jobs $75–$425 · Free quotes, no surprise fees
+              Most jobs $90–$425 · Free quotes, no surprise fees
             </span>
           </div>
 

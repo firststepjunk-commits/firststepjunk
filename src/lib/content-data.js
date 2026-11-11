@@ -88,8 +88,8 @@ export const defaultContent = {
   pricing: {
     heading: "Junk Removal Pricing in Rockford, IL",
     intro:
-      "Simple flat rates based on how much of our 10×6 ft trailer your junk fills. Junk removal starts at $75, and every rate includes labor, pickup, hauling, and all dump fees.",
-    quoteLabel: "Priced by load · from $75",
+      "Simple flat rates based on how much of our 10×6 ft trailer your junk fills. Junk removal starts at $90, and every rate includes labor, pickup, hauling, and all dump fees.",
+    quoteLabel: "Priced by load · from $90",
     footnote:
       "Mattresses and box springs are extra (landfill fee is separate). Not sure how much you have? Call or text (779) 772-1857, or send photos through the form, and we'll confirm your price before we start.",
   },

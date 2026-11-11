@@ -28,6 +28,9 @@ import {
  *
  * Shed demolition ($725 flat) and pianos are NOT in the estimator — the shed
  * has its own tier card below, and the piano ballpark isn't a locked price.
+ *
+ * Minimum charge is $90 (the small-load floor). Each TV adds a $40 disposal
+ * fee on top of the volume price, shown as its own line in the estimate.
  */
 
 const ITEMS = [
@@ -38,7 +41,7 @@ const ITEMS = [
   { key: "dresser", name: "Dresser / chest", share: 1, shareLabel: "≈ 1/8 trailer", icon: DresserIcon },
   { key: "fridge", name: "Fridge", share: 1, shareLabel: "≈ 1/8 trailer", icon: FridgeIcon },
   { key: "washer", name: "Washer or dryer", share: 1, shareLabel: "≈ 1/8 trailer", icon: WasherIcon },
-  { key: "tv", name: "TV", share: 1, shareLabel: "≈ 1/8 trailer", icon: TvIcon },
+  { key: "tv", name: "TV", share: 1, shareLabel: "≈ 1/8 trailer · +$40 disposal", icon: TvIcon },
   { key: "bags", name: "Bags & boxes (per 5)", share: 1, shareLabel: "≈ 1/8 trailer", icon: BoxIcon },
   { key: "yard", name: "Yard waste pile", share: 2, shareLabel: "≈ 1/4 trailer", icon: TreeIcon },
   { key: "debris", name: "Construction debris pile", share: 2, shareLabel: "≈ 1/4 trailer", icon: BricksIcon },
@@ -65,6 +68,15 @@ export default function PriceEstimator() {
   const overFull = totalEighths > 8;
   const fillPct = Math.min(totalEighths, 8) / 8 * 100;
   const totalItems = ITEMS.reduce((sum, item) => sum + counts[item.key], 0);
+
+  // TV disposal: $40 per TV, on top of the volume price. The volume price is
+  // the tier's flat amount, or the $90 small-load floor when the tier is a
+  // range — so a tiny load never prices below the $90 minimum.
+  const TV_DISPOSAL_FEE = 40;
+  const tvCount = counts.tv;
+  const tvFee = tvCount * TV_DISPOSAL_FEE;
+  const volumePrice = tier ? (tier.amount ?? tier.min) : 0;
+  const totalPrice = volumePrice + tvFee;
 
   function bump(key, delta) {
     setCounts((prev) => ({ ...prev, [key]: Math.max(0, Math.min(9, prev[key] + delta)) }));
@@ -147,8 +159,20 @@ export default function PriceEstimator() {
                 <p className="font-label-sm text-label-sm uppercase tracking-widest text-on-primary/80">
                   Your estimate
                 </p>
-                <p className="mt-3 text-4xl font-extrabold">{tier.price}</p>
+                <p className="mt-3 text-4xl font-extrabold">${totalPrice}</p>
                 <p className="mt-1 font-bold">{tier.name}</p>
+                {tvCount > 0 ? (
+                  <div className="mt-4 space-y-1 border-t border-on-primary/20 pt-4 text-sm font-semibold text-on-primary/90">
+                    <div className="flex items-center justify-between gap-3">
+                      <span>Load · {tier.name}</span>
+                      <span>${volumePrice}</span>
+                    </div>
+                    <div className="flex items-center justify-between gap-3">
+                      <span>TV disposal $40 × {tvCount}</span>
+                      <span>${tvFee}</span>
+                    </div>
+                  </div>
+                ) : null}
                 <div className="mt-5">
                   <div className="flex items-center justify-between text-xs font-semibold text-on-primary/80">
                     <span>Trailer space</span>
@@ -190,7 +214,7 @@ export default function PriceEstimator() {
                   Tap what you&apos;ve got — your price shows up here.
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-on-primary/90">
-                  A full trailer load is $425 flat, and small loads start at $75. Every rate includes
+                  A full trailer load is $425 flat, and small loads start at $90. Every rate includes
                   labor, pickup, hauling, and all dump fees.
                 </p>
                 <a

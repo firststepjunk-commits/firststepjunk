@@ -22,7 +22,7 @@ export const BUSINESS = {
   phone: "+17797721857",
   phoneDisplay: "(779) 772-1857",
   email: "firststep.junk@gmail.com",
-  priceRange: "$75-$425",
+  priceRange: "$90-$425",
   areaServed: [
     "Rockford, IL",
     "Loves Park, IL",
@@ -72,7 +72,7 @@ export const BUSINESS = {
    * Label shown next to each item in the "what we haul" list. Pricing is by
    * load size (see PRICE_TIERS below), so every item is covered by the tiers.
    */
-  quoteLabel: "Priced by load · from $75",
+  quoteLabel: "Priced by load · from $90",
   offers: [
     { name: "Curbside Pickup" },
     { name: "Recliner Chair Removal" },
@@ -127,7 +127,7 @@ export const BUSINESS = {
  * All rates include labor, pickup, hauling, and all dump fees.
  */
 export const PRICE_TIERS = [
-  { name: "Small load", price: "$75–$125", min: 75, max: 125, detail: "A few items or bags" },
+  { name: "Small load", price: "$90–$125", min: 90, max: 125, detail: "A few items or bags" },
   { name: "1/4 load", price: "$150", amount: 150, detail: "About a quarter of our trailer" },
   { name: "1/2 load", price: "$250", amount: 250, detail: "About half of our trailer" },
   { name: "3/4 load", price: "$350", amount: 350, detail: "About three-quarters of our trailer" },
@@ -147,7 +147,7 @@ export const PRICING_INCLUDES =
 export const MATTRESS_NOTE =
   "Mattresses and box springs are extra — the landfill fee is separate.";
 export const PRICE_SUMMARY =
-  "Junk removal starts at $75, and a full load is a $425 flat rate that includes labor, pickup, hauling, and all dump fees.";
+  "Junk removal starts at $90, and a full load is a $425 flat rate that includes labor, pickup, hauling, and all dump fees.";
 
 /** "Rockford, IL" — derived once; use for labels instead of hardcoding. */
 export const CITY_STATE = `${BUSINESS.address.addressLocality}, ${BUSINESS.address.addressRegion}`;
@@ -157,7 +157,7 @@ export const FAQ_ITEMS = [
   {
     question: "How much does junk removal cost in Rockford, IL?",
     answer:
-      "Junk removal in Rockford starts at $75. Pricing is by how much of our 10×6 ft trailer your junk fills: small load $75–$125, 1/4 load $150, 1/2 load $250, 3/4 load $350, and a full load is a $425 flat rate. Every rate includes labor, pickup, hauling, and all dump fees. Mattresses and box springs are extra because the landfill fee is separate. Call or text (779) 772-1857, or send photos through the quote form, to confirm your price before we start.",
+      "Junk removal in Rockford starts at $90. Pricing is by how much of our 10×6 ft trailer your junk fills: small load $90–$125, 1/4 load $150, 1/2 load $250, 3/4 load $350, and a full load is a $425 flat rate. Every rate includes labor, pickup, hauling, and all dump fees. Mattresses and box springs are extra because the landfill fee is separate. Call or text (779) 772-1857, or send photos through the quote form, to confirm your price before we start.",
   },
   {
     question: "Do you offer same-day junk pickup in Rockford?",
