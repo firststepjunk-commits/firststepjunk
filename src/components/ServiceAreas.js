@@ -1,5 +1,7 @@
+import SiteImage from "./SiteImage";
 import { SERVICE_PAGES } from "@/lib/service-pages";
 import { TOWN_PAGES } from "@/lib/town-pages";
+import { BUSINESS } from "@/lib/seo";
 
 const linkCls =
   "block border-b border-outline-variant/40 py-3 font-semibold text-primary transition-colors hover:text-secondary";
@@ -104,6 +106,30 @@ export default function ServiceAreas({ excludeSlug }) {
           </a>{" "}
           — if it&apos;s around Rockford, we can usually help.
         </p>
+
+        {/* Real OpenStreetMap tiles with pins at geocoded town centers —
+            built at deploy time, so the map loads as a plain image. */}
+        <figure className="mt-10" data-aos="fade-up">
+          <SiteImage
+            src="/images/service-area-map.jpg"
+            alt="Map of Rockford, Illinois and surrounding towns served by FirstStep Junk Removal: Rockford, Loves Park, Machesney Park, Belvidere, Cherry Valley, Roscoe, and Rockton"
+            width={1024}
+            height={768}
+            className="w-full rounded-2xl border border-outline-variant/30 shadow-sm"
+          />
+          <figcaption className="mt-3 text-sm text-on-surface-variant">
+            Where we work — Rockford and the surrounding towns, from Rockton to Belvidere.{" "}
+            <a
+              href={BUSINESS.google.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold text-secondary underline-offset-4 hover:underline"
+            >
+              Open in Google Maps
+            </a>
+            {" · "}Map © OpenStreetMap contributors.
+          </figcaption>
+        </figure>
       </div>
     </section>
   );

@@ -123,6 +123,35 @@ export default function Services() {
             </span>
           </a>
         </div>
+
+        {/* Single-item pages — a compact link row so the 7-card grid stays
+            clean while every item page gets a homepage link. */}
+        <div className="mt-10" data-aos="fade-up">
+          <p className="text-sm font-bold uppercase tracking-wider text-on-surface-variant">
+            More single-item removals
+          </p>
+          <ul className="mt-3 flex flex-wrap gap-2">
+            {[
+              { label: "Mattress removal", href: "/mattress-removal-rockford" },
+              { label: "Recliner removal", href: "/recliner-removal-rockford" },
+              { label: "Ping pong table removal", href: "/ping-pong-table-removal-rockford" },
+              { label: "Trampoline removal", href: "/trampoline-removal-rockford" },
+              { label: "Hot tub removal", href: "/hot-tub-removal-rockford" },
+              { label: "Piano removal", href: "/piano-removal-rockford" },
+              { label: "TV removal", href: "/tv-removal-rockford" },
+              { label: "Couch removal", href: "/couch-removal-rockford" },
+            ].map((l) => (
+              <li key={l.href}>
+                <a
+                  href={l.href}
+                  className="inline-block rounded-full border border-outline-variant/40 bg-white px-3.5 py-1.5 text-sm font-semibold text-primary transition-colors hover:border-secondary hover:text-secondary"
+                >
+                  {l.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );

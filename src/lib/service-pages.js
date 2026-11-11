@@ -477,6 +477,382 @@ export const SERVICE_PAGES = [
     image: "/images/hero-trailer.jpg",
     serviceName: "Curbside junk pickup",
   },
+  {
+    slug: "mattress-removal-rockford",
+    path: "/mattress-removal-rockford",
+    title: "Mattress Removal in Rockford, IL",
+    metaTitle: "Mattress Removal Rockford IL | First Step Junk",
+    metaDescription:
+      "Mattress removal in Rockford, IL. Single mattresses, box springs and full sets hauled away. Free upfront quote — call (779) 772-1857.",
+    h1: "Mattress Removal in Rockford, IL",
+    answerFirst:
+      "FirstStep Junk Removal LLC removes mattresses, box springs, and full mattress sets in Rockford, IL. Mattresses are extra because the landfill charges a separate fee — tell us how many you have and we'll include it in your price. We carry from the bedroom, basement, or upstairs. Call or text (779) 772-1857.",
+    intro:
+      "Upgrading the bed or clearing a spare room? We carry the mattress out, load it, and haul it away — no wrestling it into a truck yourself.",
+    bullets: [
+      "Single mattresses, box springs, and full sets",
+      "Carried out from bedrooms, basements, and upstairs rooms",
+      "Doorways and stairs protected",
+      "Same-day pickup when the schedule allows",
+      "Free upfront price before we load — starting at $90",
+    ],
+    howItWorks: [
+      "Send a photo or tell us how many mattresses and box springs you have.",
+      "We quote it free, including the landfill fee.",
+      "Crew arrives in the scheduled window and carries them out.",
+      "Mattresses are gone — no dump trip for you.",
+    ],
+    relatedServices: [
+      { name: "Boxspring Removal" },
+      { name: "Couch Removal" },
+      { name: "Furniture Removal" },
+      { name: "Estate Cleanout" },
+    ],
+    faqs: [
+      costFaq("How much does mattress removal cost in Rockford?", "Mattress removal is priced by how much of our trailer it fills, plus the landfill fee."),
+      {
+        question: "Do you take box springs too?",
+        answer:
+          "Yes. Box springs are hauled with mattresses and carry the same separate landfill fee. Tell us how many you have when you call or text (779) 772-1857.",
+      },
+      {
+        question: "Will you carry a mattress down stairs?",
+        answer:
+          "Yes. Our crew carries mattresses out from bedrooms, basements, and upstairs rooms. Mention stairs when you request your quote.",
+      },
+      {
+        question: "Can you pick up a mattress the same day?",
+        answer:
+          "Often, yes — same-day pickup is available in Rockford when the schedule allows. We're open every day 7:30 AM–7:30 PM, so call early to check openings.",
+      },
+    ],
+    image: "/images/crew-member-lifting.jpg",
+    serviceName: "Mattress removal",
+  },
+  {
+    slug: "recliner-removal-rockford",
+    path: "/recliner-removal-rockford",
+    title: "Recliner Removal in Rockford, IL",
+    metaTitle: "Recliner Removal Rockford IL | Free Quote | First Step Junk",
+    metaDescription:
+      "Recliner removal in Rockford, IL. Recliners, lift chairs and oversized chairs hauled away. Free upfront quote — call (779) 772-1857.",
+    h1: "Recliner Removal in Rockford, IL",
+    answerFirst:
+      "FirstStep Junk Removal LLC removes recliners, lift chairs, and oversized armchairs in Rockford, IL. Every piece is quoted free and upfront — tell us what you have and we'll give you the price before we lift anything. Call or text (779) 772-1857.",
+    intro:
+      "That old recliner is done — the mechanism is shot or it's just not your style anymore. We carry it out and haul it away.",
+    bullets: [
+      "Recliners, lift chairs, and oversized armchairs",
+      "Carried out from living rooms, basements, and upstairs",
+      "Doorways and stairs protected",
+      "Free upfront price before we load — starting at $90",
+      "Same-day pickup when the schedule allows",
+    ],
+    howItWorks: [
+      "Send a photo or describe the chair (lift chair? oversized?).",
+      "We quote it free before we lift anything.",
+      "Crew arrives in the scheduled window and carries it out.",
+      "Chair is gone — no dump trip for you.",
+    ],
+    relatedServices: [
+      { name: "Couch Removal" },
+      { name: "Sectional Sofa Disposal" },
+      { name: "Furniture Removal" },
+      { name: "Boxspring Removal" },
+    ],
+    faqs: [
+      costFaq("How much does recliner removal cost in Rockford?", "Recliner removal is priced by how much space it takes in our 10×6 ft trailer."),
+      {
+        question: "Do you remove lift chairs?",
+        answer:
+          "Yes. Lift chairs, recliners, and oversized armchairs are all handled — send a photo and we'll quote it. Call or text (779) 772-1857.",
+      },
+      {
+        question: "Will you carry a recliner down stairs?",
+        answer:
+          "Yes. Our crew carries chairs out from basements and upstairs rooms. Mention stairs when you request your quote.",
+      },
+      {
+        question: "Can you haul a recliner the same day?",
+        answer:
+          "Often, yes — same-day pickup is available in Rockford when the schedule allows. We're open every day 7:30 AM–7:30 PM, so call early to check openings.",
+      },
+    ],
+    image: "/images/team-lifting-box.jpg",
+    serviceName: "Recliner removal",
+  },
+  {
+    slug: "ping-pong-table-removal-rockford",
+    path: "/ping-pong-table-removal-rockford",
+    title: "Ping Pong Table Removal in Rockford, IL",
+    metaTitle: "Ping Pong Table Removal Rockford IL | First Step Junk",
+    metaDescription:
+      "Ping pong table removal in Rockford, IL. Folding and standard tables hauled from basements and garages. Free quote — call (779) 772-1857.",
+    h1: "Ping Pong Table Removal in Rockford, IL",
+    answerFirst:
+      "FirstStep Junk Removal LLC removes ping pong tables in Rockford, IL — folding and standard tables, carried out from basements, garages, and game rooms. Every job is quoted free and upfront. Call or text (779) 772-1857.",
+    intro:
+      "The table hasn't been used in years and it's eating half the basement. We get it out — through the door, up the stairs, and onto the truck.",
+    bullets: [
+      "Folding and standard ping pong tables",
+      "Carried out from basements, garages, and game rooms",
+      "We take apart what needs to come apart to get it through the door",
+      "Free upfront price before we load — starting at $90",
+      "Same-day pickup when the schedule allows",
+    ],
+    howItWorks: [
+      "Send a photo or tell us where the table is (basement? garage? folding?).",
+      "We quote it free before we lift anything.",
+      "Crew arrives in the scheduled window and carries it out.",
+      "Table is gone — no dump trip for you.",
+    ],
+    relatedServices: [
+      { name: "Furniture Removal" },
+      { name: "Garage & Basement Cleanout" },
+      { name: "Couch Removal" },
+      { name: "Appliance Removal" },
+    ],
+    faqs: [
+      costFaq("How much does ping pong table removal cost in Rockford?", "Ping pong table removal is priced by how much of our trailer it fills."),
+      {
+        question: "Do you take the table apart?",
+        answer:
+          "If it needs to come apart to get through a door or up the stairs, we take care of that. Tell us where the table is when you request your quote.",
+      },
+      {
+        question: "Will you carry it up from the basement?",
+        answer:
+          "Yes. Our crew carries tables up from basements. Mention stairs when you request your quote.",
+      },
+      {
+        question: "Can you pick up a ping pong table the same day?",
+        answer:
+          "Often, yes — same-day pickup is available in Rockford when the schedule allows. We're open every day 7:30 AM–7:30 PM, so call early to check openings.",
+      },
+    ],
+    image: "/images/crew-loading-logs.jpg",
+    serviceName: "Ping pong table removal",
+  },
+  {
+    slug: "trampoline-removal-rockford",
+    path: "/trampoline-removal-rockford",
+    title: "Trampoline Removal in Rockford, IL",
+    metaTitle: "Trampoline Removal Rockford IL | First Step Junk",
+    metaDescription:
+      "Trampoline removal in Rockford, IL. Backyard trampolines taken apart and hauled away. Free quote — call (779) 772-1857.",
+    h1: "Trampoline Removal in Rockford, IL",
+    answerFirst:
+      "FirstStep Junk Removal LLC removes backyard trampolines in Rockford, IL. We take the trampoline apart in the yard, load the frame, mat, springs, and netting, and haul it all away. Every job is quoted free and upfront. Call or text (779) 772-1857.",
+    intro:
+      "The kids outgrew it, the mat is torn, and it's been rusting in the yard for two summers. We take it apart and haul it away so the yard is yours again.",
+    bullets: [
+      "Round and rectangular trampolines, any size",
+      "Frame, mat, springs, and safety netting all hauled",
+      "We take it apart in the yard — no need to dismantle it first",
+      "Free upfront price before we load — starting at $90",
+      "Same-day pickup when the schedule allows",
+    ],
+    howItWorks: [
+      "Send a photo of the trampoline and where it sits in the yard.",
+      "We quote it free before we start.",
+      "Crew arrives, takes it apart, and loads everything.",
+      "Trampoline is gone — no dump trip for you.",
+    ],
+    relatedServices: [
+      { name: "Yard Waste Removal" },
+      { name: "Shed Demolition" },
+      { name: "Deck & Fence Removal" },
+      { name: "Garage & Basement Cleanout" },
+    ],
+    faqs: [
+      costFaq("How much does trampoline removal cost in Rockford?", "Trampoline removal is priced by how much of our trailer the frame and parts fill."),
+      {
+        question: "Do I need to take the trampoline apart first?",
+        answer:
+          "No. We take it apart in the yard — that's part of the job. Just tell us where it is when you request your quote.",
+      },
+      {
+        question: "Do you haul the frame and the mat?",
+        answer:
+          "Yes. The frame, mat, springs, and safety netting all go on the truck.",
+      },
+      {
+        question: "Can you remove a trampoline the same day?",
+        answer:
+          "Often, yes — same-day pickup is available in Rockford when the schedule allows. We're open every day 7:30 AM–7:30 PM, so call early to check openings.",
+      },
+    ],
+    image: "/images/unloading-lumber.jpg",
+    serviceName: "Trampoline removal",
+  },
+  {
+    slug: "hot-tub-removal-rockford",
+    path: "/hot-tub-removal-rockford",
+    title: "Hot Tub Removal in Rockford, IL",
+    metaTitle: "Hot Tub Removal Rockford IL | First Step Junk",
+    metaDescription:
+      "Hot tub removal in Rockford, IL. Old spas and hot tubs hauled away. Send a photo for an exact price — call (779) 772-1857.",
+    h1: "Hot Tub Removal in Rockford, IL",
+    answerFirst:
+      "FirstStep Junk Removal LLC removes old hot tubs and spas in Rockford, IL. Hot tubs are priced by size and access — send a photo and we'll give you an exact price before we start. Call or text (779) 772-1857.",
+    intro:
+      "That old spa is cracked, dead, or just taking up the whole patio. We haul it away so you can use the space again.",
+    bullets: [
+      "Hot tubs and spas of all sizes",
+      "Priced by size and access — send a photo for an exact price",
+      "We handle the heavy lifting and the haul-away",
+      "Same-day pickup when the schedule allows",
+      "Open daily 7:30 AM–7:30 PM",
+    ],
+    howItWorks: [
+      "Send photos of the tub — size, where it sits, and how to reach it.",
+      "We confirm your price before we start.",
+      "Crew arrives in the scheduled window and removes the tub.",
+      "We haul it away and dispose of it.",
+    ],
+    relatedServices: [
+      { name: "Shed Demolition" },
+      { name: "Deck & Fence Removal" },
+      { name: "Appliance Removal" },
+      { name: "Yard Waste Removal" },
+    ],
+    faqs: [
+      {
+        question: "How much does hot tub removal cost in Rockford?",
+        answer:
+          "Hot tub removal is priced by the size of the tub and how easy it is to reach. Send photos or call (779) 772-1857 and we'll give you an exact price before we start. Our load rates run from $90 for a small load to a $425 flat rate for a full trailer load, dump fees included.",
+      },
+      {
+        question: "Does the hot tub need to be drained first?",
+        answer:
+          "Yes — please drain the tub and disconnect the power before we arrive. If you're not sure how, call or text (779) 772-1857 and we'll talk it through.",
+      },
+      {
+        question: "Can you get a hot tub out of a fenced yard?",
+        answer:
+          "Tell us about gates, decks, and stairs when you request your quote and we'll plan the removal.",
+      },
+      {
+        question: "Can you remove a hot tub the same day?",
+        answer:
+          "Often, yes — same-day pickup is available in Rockford when the schedule allows. We're open every day 7:30 AM–7:30 PM, so call early to check openings.",
+      },
+    ],
+    image: "/images/garden-path-lift.jpg",
+    serviceName: "Hot tub removal",
+  },
+  {
+    slug: "piano-removal-rockford",
+    path: "/piano-removal-rockford",
+    title: "Piano Removal in Rockford, IL",
+    metaTitle: "Piano Removal Rockford IL | First Step Junk",
+    metaDescription:
+      "Piano removal in Rockford, IL. Upright pianos moved by a two-person crew. Send a photo for an exact price — call (779) 772-1857.",
+    h1: "Piano Removal in Rockford, IL",
+    answerFirst:
+      "FirstStep Junk Removal LLC removes upright pianos in Rockford, IL with a two-person crew. An upright piano can weigh 400–600 lbs, so we plan the lift, protect your floors and doorways, and haul it away. Send a photo for an exact price — call or text (779) 772-1857.",
+    intro:
+      "That piano isn't getting played anymore, and it's not moving itself. We handle the heavy lift and the haul-away.",
+    bullets: [
+      "Upright piano removal with a two-person crew",
+      "Floors, doorways, and stairs protected",
+      "Priced by the job — send a photo for an exact price",
+      "Same-day pickup when the schedule allows",
+      "Open daily 7:30 AM–7:30 PM",
+    ],
+    howItWorks: [
+      "Send a photo of the piano — upright or grand, ground floor or stairs.",
+      "We confirm your price before we start.",
+      "Crew arrives with a plan for the lift.",
+      "Piano is gone — no dump trip for you.",
+    ],
+    relatedServices: [
+      { name: "Furniture Removal" },
+      { name: "Estate Cleanout" },
+      { name: "Couch Removal" },
+      { name: "Garage & Basement Cleanout" },
+    ],
+    faqs: [
+      {
+        question: "How much does piano removal cost in Rockford?",
+        answer:
+          "Piano removal is priced by the piano and the job — ground floor or stairs, and how far it has to travel to the truck. Send a photo or call (779) 772-1857 and we'll give you an exact price before we start. Our load rates run from $90 for a small load to a $425 flat rate for a full trailer load.",
+      },
+      {
+        question: "Do you move grand pianos?",
+        answer:
+          "Tell us what kind of piano you have when you call — uprights are our usual job, and we'll tell you straight if a grand needs a specialist.",
+      },
+      {
+        question: "Will you carry a piano down stairs?",
+        answer:
+          "Yes, with a two-person crew and a plan for the lift. Mention stairs when you request your quote.",
+      },
+      {
+        question: "Can you pick up a piano the same day?",
+        answer:
+          "Often, yes — same-day pickup is available in Rockford when the schedule allows. We're open every day 7:30 AM–7:30 PM, so call early to check openings.",
+      },
+    ],
+    image: "/images/crew-at-job-site.jpg",
+    serviceName: "Piano removal",
+  },
+  {
+    slug: "tv-removal-rockford",
+    path: "/tv-removal-rockford",
+    title: "TV Removal in Rockford, IL",
+    metaTitle: "TV Removal Rockford IL | $40 Each | First Step Junk",
+    metaDescription:
+      "TV removal in Rockford, IL — $40 each for disposal. Old TVs hauled away and recycled. Free quote — call (779) 772-1857.",
+    h1: "TV Removal in Rockford, IL",
+    answerFirst:
+      "FirstStep Junk Removal LLC removes old TVs in Rockford, IL — any size, from any room. TVs are $40 each for disposal, on top of your load price, and they're taken to a local electronics recycler. Call or text (779) 772-1857 for a free quote.",
+    intro:
+      "That old TV is heavy, awkward, and can't go in the trash. We carry it out and take it to a local electronics recycler.",
+    bullets: [
+      "TVs of any size — tube, flat-screen, and big screens",
+      "$40 each for disposal, on top of your load price",
+      "Carried out from any room, including basements and upstairs",
+      "Taken to a local electronics recycler",
+      "Free upfront price before we load — starting at $90",
+    ],
+    howItWorks: [
+      "Tell us how many TVs you have and where they are.",
+      "We confirm your price — load rate plus $40 per TV.",
+      "Crew arrives in the scheduled window and carries them out.",
+      "We haul them to the recycler.",
+    ],
+    relatedServices: [
+      { name: "Appliance Removal" },
+      { name: "Electronics Recycling" },
+      { name: "Furniture Removal" },
+      { name: "Estate Cleanout" },
+    ],
+    faqs: [
+      {
+        question: "How much does TV removal cost in Rockford?",
+        answer:
+          "TVs are $40 each for disposal, on top of your load price. Load rates start at $90 for a small load and run to a $425 flat rate for a full trailer load, dump fees included. Tell us how many TVs you have and we'll confirm your total before we start.",
+      },
+      {
+        question: "Do you take old tube TVs?",
+        answer:
+          "Yes — tube TVs, flat-screens, and big screens, any size.",
+      },
+      {
+        question: "Where do the TVs go?",
+        answer:
+          "To a local electronics recycler for proper disposal — they don't go in the landfill.",
+      },
+      {
+        question: "Can you pick up a TV the same day?",
+        answer:
+          "Often, yes — same-day pickup is available in Rockford when the schedule allows. We're open every day 7:30 AM–7:30 PM, so call early to check openings.",
+      },
+    ],
+    image: "/images/hero-cleanup-after.jpg",
+    serviceName: "TV removal",
+  },
 ];
 
 export function getServicePage(slug) {
