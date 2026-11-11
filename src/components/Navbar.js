@@ -1,6 +1,7 @@
 "use client";
 
 import SiteImage from "./SiteImage";
+import { PhoneIcon } from "./icons";
 import { useState } from "react";
 import { defaultContent } from "@/lib/content-data";
 import { BUSINESS } from "@/lib/seo";
@@ -47,6 +48,13 @@ export default function Navbar({ content, homeLinks = false }) {
         </nav>
 
         <div className="flex items-center gap-2">
+          <a
+            className="hidden items-center gap-2 rounded-lg border-2 border-primary bg-white px-5 py-2.5 font-bold text-primary transition-all duration-200 hover:bg-primary hover:text-on-primary active:scale-95 lg:inline-flex"
+            href={`tel:${BUSINESS.phone}`}
+          >
+            <PhoneIcon className="h-5 w-5" />
+            {BUSINESS.phoneDisplay}
+          </a>
           <a
             className="hidden rounded-lg bg-primary px-6 py-2.5 font-bold text-on-primary transition-transform duration-200 hover:scale-105 active:scale-95 sm:inline-block"
             href={quoteHref}
@@ -95,7 +103,15 @@ export default function Navbar({ content, homeLinks = false }) {
               ))}
             </ul>
             <a
-              className="mt-5 block rounded-lg bg-primary px-6 py-3 text-center font-bold text-on-primary active:scale-95"
+              className="mt-5 flex items-center justify-center gap-2 rounded-lg border-2 border-primary bg-white px-6 py-3 text-center font-bold text-primary active:scale-95"
+              href={`tel:${BUSINESS.phone}`}
+              onClick={() => setOpen(false)}
+            >
+              <PhoneIcon className="h-5 w-5" />
+              {BUSINESS.phoneDisplay}
+            </a>
+            <a
+              className="mt-3 block rounded-lg bg-primary px-6 py-3 text-center font-bold text-on-primary active:scale-95"
               href={quoteHref}
               onClick={() => setOpen(false)}
             >
