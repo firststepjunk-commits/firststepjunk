@@ -1,6 +1,7 @@
 import { defaultContent } from "@/lib/content-data";
 import { BUSINESS } from "@/lib/seo";
 import PriceTierGrid from "@/components/PriceTierGrid";
+import PriceEstimator from "@/components/PriceEstimator";
 
 /**
  * Pricing section: the owner's flat-rate load tiers (single source of truth in
@@ -18,6 +19,9 @@ export default function PricingStrip({ content }) {
         <div className="mb-10 max-w-2xl" data-aos="fade-up">
           <h2 className="font-headline-lg text-headline-lg text-primary">{p.heading}</h2>
           <p className="mt-3 text-on-surface-variant">{p.intro}</p>
+        </div>
+        <div data-aos="fade-up">
+          <PriceEstimator />
         </div>
         <div data-aos="fade-up">
           <PriceTierGrid />

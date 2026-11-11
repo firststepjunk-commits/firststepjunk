@@ -249,3 +249,31 @@ export function BoxIcon({ className = "h-5 w-5" }) {
     </StrokeIcon>
   );
 }
+
+export function TvIcon({ className = "h-5 w-5" }) {
+  return (
+    <StrokeIcon className={className}>
+      <rect x="2" y="4" width="20" height="13" rx="1" />
+      <path d="M8 21h8M12 17v4" />
+    </StrokeIcon>
+  );
+}
+
+export function WasherIcon({ className = "h-5 w-5" }) {
+  return (
+    <StrokeIcon className={className}>
+      <rect x="4" y="3" width="16" height="18" rx="1" />
+      <circle cx="12" cy="13" r="4" />
+      <path d="M4 7h16" />
+    </StrokeIcon>
+  );
+}
+
+export function DresserIcon({ className = "h-5 w-5" }) {
+  return (
+    <StrokeIcon className={className}>
+      <rect x="4" y="3" width="16" height="18" rx="1" />
+      <path d="M4 9h16M4 15h16M10 6h4M10 12h4M10 18h4" />
+    </StrokeIcon>
+  );
+}
