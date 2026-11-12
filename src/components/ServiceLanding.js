@@ -7,6 +7,35 @@ import ServiceAreas from "@/components/ServiceAreas";
 import PriceTierGrid from "@/components/PriceTierGrid";
 import { defaultContent } from "@/lib/content-data";
 
+/**
+ * "What we haul" names → the real page covering that service. Names with no
+ * dedicated page point at the closest real page (yard waste / deck & fence
+ * → the main junk removal page, whose copy covers both). Names absent from
+ * this map render as plain text — never link to a page that doesn't exist.
+ * Self-links are suppressed at render time (a page never links to itself).
+ */
+const RELATED_LINKS = {
+  "Couch Removal": "/couch-removal-rockford",
+  "Sectional Sofa Disposal": "/couch-removal-rockford",
+  "Curbside Pickup": "/curbside-pickup-rockford",
+  "Boxspring Removal": "/mattress-removal-rockford",
+  "Water Heater Removal": "/appliance-removal-rockford",
+  "Furniture Removal": "/furniture-removal-rockford",
+  "Dryer Removal": "/appliance-removal-rockford",
+  "Dishwasher Removal": "/appliance-removal-rockford",
+  "Appliance Removal": "/appliance-removal-rockford",
+  "Appliance / dryer removal": "/appliance-removal-rockford",
+  "TV Removal & Electronics Recycling": "/tv-removal-rockford",
+  "Electronics Recycling": "/tv-removal-rockford",
+  "Garage & Basement Cleanout": "/garage-basement-cleanout-rockford",
+  "Estate Cleanout": "/estate-cleanout-rockford",
+  "Yard Waste Removal": "/junk-removal-rockford",
+  "Deck & Fence Removal": "/junk-removal-rockford",
+  "Shed Demolition": "/shed-demolition-rockford",
+  "Recliner Chair Removal": "/recliner-removal-rockford",
+  "Piano Removal": "/piano-removal-rockford",
+};
+
 export default function ServiceLanding({ page }) {
   const content = defaultContent;
 
@@ -113,20 +142,33 @@ export default function ServiceLanding({ page }) {
               confirm your price before we start.
             </p>
             <ul className="mt-8">
-              {page.relatedServices.map((service) => (
-                <li
-                  key={service.name}
-                  className="flex items-baseline justify-between gap-4 border-b border-outline-variant/25 py-3"
-                >
-                  <span>{service.name}</span>
-                  <Link
-                    href="/#quote"
-                    className="shrink-0 font-semibold text-secondary underline-offset-4 hover:underline"
+              {page.relatedServices.map((service) => {
+                const target = RELATED_LINKS[service.name];
+                const linked = target && target !== page.path;
+                return (
+                  <li
+                    key={service.name}
+                    className="flex items-baseline justify-between gap-4 border-b border-outline-variant/25 py-3"
                   >
-                    {BUSINESS.quoteLabel}
-                  </Link>
-                </li>
-              ))}
+                    {linked ? (
+                      <Link
+                        href={target}
+                        className="font-semibold text-primary underline-offset-4 hover:underline"
+                      >
+                        {service.name}
+                      </Link>
+                    ) : (
+                      <span>{service.name}</span>
+                    )}
+                    <Link
+                      href="/#quote"
+                      className="shrink-0 font-semibold text-secondary underline-offset-4 hover:underline"
+                    >
+                      {BUSINESS.quoteLabel}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </section>

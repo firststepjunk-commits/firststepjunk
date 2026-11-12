@@ -184,6 +184,36 @@ export const FAQ_ITEMS = [
     answer:
       "Request a free quote on firststepjunk.com, or call/text (779) 772-1857. Photos of your junk help us price faster. We give transparent, no-obligation estimates, and our flat load rates include all dump fees.",
   },
+  {
+    question: "How do I get an exact price for my junk?",
+    answer:
+      "Use the price estimator on this page or send a photo through the quote form. Your estimate shows instantly, and your exact price is confirmed from a photo before we start — it never changes after that. Text a photo to (779) 772-1857 for the fastest answer.",
+  },
+  {
+    question: "Do you haul away hot tubs in Rockford?",
+    answer:
+      "Yes. We break down and haul away old hot tubs and spas in Rockford, IL, carrying out every piece. Hot tubs are priced by size and access, so send a photo for your exact price. Call or text (779) 772-1857.",
+  },
+  {
+    question: "Can you tear down and remove a shed?",
+    answer:
+      "Yes. A standard empty wood 10×12 shed is a $725 flat rate covering demolition, hauling, and disposal. A concrete slab underneath is quoted separately. Send a photo of your shed to (779) 772-1857 for a confirmed price.",
+  },
+  {
+    question: "Do you remove pianos?",
+    answer:
+      "Yes. We remove upright pianos in Rockford, IL with a two-person crew, protecting your floors and doorways. Upright pianos weigh 400–600 lbs, so every piano job is quoted individually — send a photo for your exact price. Call or text (779) 772-1857.",
+  },
+  {
+    question: "What happens to my junk after you haul it away?",
+    answer:
+      "We take it to local disposal and recycling facilities, and we sweep up before we leave. Anything regulated as hazardous waste — chemicals, paints, oils, asbestos — we cannot take, and we will tell you where it goes instead.",
+  },
+  {
+    question: "Do you offer pest control too?",
+    answer:
+      "Yes. Alongside junk removal, we handle pest control in the Rockford area — rodents, insects, wasps, ants, and roaches. Michael spent years in pest control, including time at Terminix. Mention it when you book, or call (779) 772-1857.",
+  },
 ];
 
 /** Offers with real prices for each load-size tier and shed demolition. */

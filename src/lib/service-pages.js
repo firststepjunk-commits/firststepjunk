@@ -24,7 +24,7 @@ export const SERVICE_PAGES = [
       "Junk removal in Rockford, IL by FirstStep Junk Removal LLC. Licensed & insured. Free upfront quotes. Same-day pickup available. Call (779) 772-1857.",
     h1: "Junk Removal in Rockford, IL",
     answerFirst:
-      "FirstStep Junk Removal LLC provides junk removal in Rockford, IL for homes and businesses. We haul furniture, appliances, debris, yard waste, and full cleanouts. Licensed and insured. Open daily 7:30 AM–7:30 PM. Call or text (779) 772-1857 for a free upfront quote.",
+      "FirstStep Junk Removal LLC provides junk removal in Rockford, IL for homes and businesses. We haul furniture, appliances, debris, yard waste, and full cleanouts. Junk removal starts at $90, and a full load is a $425 flat rate that includes labor, pickup, hauling, and all dump fees. Licensed and insured. Open daily 7:30 AM–7:30 PM. Call or text (779) 772-1857 for a free upfront quote.",
     intro:
       "Need clutter gone in Rockford or nearby Winnebago County? We show up on time, quote transparently, and haul it the right way — no surprise fees after the truck is loaded.",
     bullets: [
@@ -77,7 +77,7 @@ export const SERVICE_PAGES = [
       "Couch removal in Rockford, IL. Sofas, sectionals, recliners and loveseats hauled by FirstStep Junk Removal LLC. Free upfront quote — call (779) 772-1857.",
     h1: "Couch & Sofa Removal in Rockford, IL",
     answerFirst:
-      "FirstStep Junk Removal LLC removes couches, sectionals, recliners, and loveseats in Rockford, IL. Every piece is quoted free and upfront — tell us what you have and we'll give you the price before we lift anything. We protect doorways, navigate stairs, and haul same-day when the schedule allows. Call (779) 772-1857.",
+      "FirstStep Junk Removal LLC removes couches, sectionals, recliners, and loveseats in Rockford, IL. Couch removal starts at $90, and every piece is quoted free and upfront — tell us what you have and we'll give you the price before we lift anything. We protect doorways, navigate stairs, and haul same-day when the schedule allows. Call (779) 772-1857.",
     intro:
       "Old sofa taking up the garage or blocking a room flip? We remove couches, sectionals, recliners, and loveseats across Rockford without the dump-run headache.",
     bullets: [
@@ -133,7 +133,7 @@ export const SERVICE_PAGES = [
       "Same-day junk pickup in Rockford, IL when schedule allows. Open daily 7:30 AM–7:30 PM. FirstStep Junk Removal LLC — call (779) 772-1857.",
     h1: "Same-Day Junk Pickup in Rockford, IL",
     answerFirst:
-      "First Step Junk Removal offers same-day junk pickup in Rockford, IL and nearby towns when the schedule allows. We are open Monday–Sunday 7:30 AM–7:30 PM. Call or text (779) 772-1857 for today’s availability and an upfront quote.",
+      "First Step Junk Removal offers same-day junk pickup in Rockford, IL and nearby towns when the schedule allows. Jobs start at $90, and a full load is a $425 flat rate including labor, pickup, hauling, and all dump fees. We are open Monday–Sunday 7:30 AM–7:30 PM. Call or text (779) 772-1857 for today’s availability and an upfront quote.",
     intro:
       "Landlord turnover, move-out deadline, or a couch that has to go today? We prioritize fast response windows and text when we are 15 minutes out.",
     bullets: [
@@ -486,7 +486,7 @@ export const SERVICE_PAGES = [
       "Mattress removal in Rockford, IL. Single mattresses, box springs and full sets hauled away. Free upfront quote — call (779) 772-1857.",
     h1: "Mattress Removal in Rockford, IL",
     answerFirst:
-      "FirstStep Junk Removal LLC removes mattresses, box springs, and full mattress sets in Rockford, IL. Mattresses are extra because the landfill charges a separate fee — tell us how many you have and we'll include it in your price. We carry from the bedroom, basement, or upstairs. Call or text (779) 772-1857.",
+      "FirstStep Junk Removal LLC removes mattresses, box springs, and full mattress sets in Rockford, IL. Pickup starts at $90. Mattresses are extra because the landfill charges a separate fee — tell us how many you have and we'll include it in your price. We carry from the bedroom, basement, or upstairs. Call or text (779) 772-1857.",
     intro:
       "Upgrading the bed or clearing a spare room? We carry the mattress out, load it, and haul it away — no wrestling it into a truck yourself.",
     bullets: [
@@ -538,7 +538,7 @@ export const SERVICE_PAGES = [
       "Recliner removal in Rockford, IL. Recliners, lift chairs and oversized chairs hauled away. Free upfront quote — call (779) 772-1857.",
     h1: "Recliner Removal in Rockford, IL",
     answerFirst:
-      "FirstStep Junk Removal LLC removes recliners, lift chairs, and oversized armchairs in Rockford, IL. Every piece is quoted free and upfront — tell us what you have and we'll give you the price before we lift anything. Call or text (779) 772-1857.",
+      "FirstStep Junk Removal LLC removes recliners, lift chairs, and oversized armchairs in Rockford, IL. Recliner removal starts at $90, and every piece is quoted free and upfront — tell us what you have and we'll give you the price before we lift anything. Call or text (779) 772-1857.",
     intro:
       "That old recliner is done — the mechanism is shot or it's just not your style anymore. We carry it out and haul it away.",
     bullets: [
@@ -590,7 +590,7 @@ export const SERVICE_PAGES = [
       "Ping pong table removal in Rockford, IL. Folding and standard tables hauled from basements and garages. Free quote — call (779) 772-1857.",
     h1: "Ping Pong Table Removal in Rockford, IL",
     answerFirst:
-      "FirstStep Junk Removal LLC removes ping pong tables in Rockford, IL — folding and standard tables, carried out from basements, garages, and game rooms. Every job is quoted free and upfront. Call or text (779) 772-1857.",
+      "FirstStep Junk Removal LLC removes ping pong tables in Rockford, IL — folding and standard tables, carried out from basements, garages, and game rooms. Jobs start at $90, and every job is quoted free and upfront. Call or text (779) 772-1857.",
     intro:
       "The table hasn't been used in years and it's eating half the basement. We get it out — through the door, up the stairs, and onto the truck.",
     bullets: [
@@ -642,7 +642,7 @@ export const SERVICE_PAGES = [
       "Trampoline removal in Rockford, IL. Backyard trampolines taken apart and hauled away. Free quote — call (779) 772-1857.",
     h1: "Trampoline Removal in Rockford, IL",
     answerFirst:
-      "FirstStep Junk Removal LLC removes backyard trampolines in Rockford, IL. We take the trampoline apart in the yard, load the frame, mat, springs, and netting, and haul it all away. Every job is quoted free and upfront. Call or text (779) 772-1857.",
+      "FirstStep Junk Removal LLC removes backyard trampolines in Rockford, IL. We take the trampoline apart in the yard, load the frame, mat, springs, and netting, and haul it all away. Jobs start at $90, and every job is quoted free and upfront. Call or text (779) 772-1857.",
     intro:
       "The kids outgrew it, the mat is torn, and it's been rusting in the yard for two summers. We take it apart and haul it away so the yard is yours again.",
     bullets: [
@@ -694,7 +694,7 @@ export const SERVICE_PAGES = [
       "Hot tub removal in Rockford, IL. Old spas and hot tubs hauled away. Send a photo for an exact price — call (779) 772-1857.",
     h1: "Hot Tub Removal in Rockford, IL",
     answerFirst:
-      "FirstStep Junk Removal LLC removes old hot tubs and spas in Rockford, IL. Hot tubs are priced by size and access — send a photo and we'll give you an exact price before we start. Call or text (779) 772-1857.",
+      "FirstStep Junk Removal LLC removes old hot tubs and spas in Rockford, IL. All jobs start at our $90 minimum. Hot tubs are priced by size and access — send a photo and we'll give you an exact price before we start. Call or text (779) 772-1857.",
     intro:
       "That old spa is cracked, dead, or just taking up the whole patio. We haul it away so you can use the space again.",
     bullets: [
@@ -750,7 +750,7 @@ export const SERVICE_PAGES = [
       "Piano removal in Rockford, IL. Upright pianos moved by a two-person crew. Send a photo for an exact price — call (779) 772-1857.",
     h1: "Piano Removal in Rockford, IL",
     answerFirst:
-      "FirstStep Junk Removal LLC removes upright pianos in Rockford, IL with a two-person crew. An upright piano can weigh 400–600 lbs, so we plan the lift, protect your floors and doorways, and haul it away. Send a photo for an exact price — call or text (779) 772-1857.",
+      "FirstStep Junk Removal LLC removes upright pianos in Rockford, IL with a two-person crew. An upright piano can weigh 400–600 lbs, so we plan the lift, protect your floors and doorways, and haul it away. All jobs start at our $90 minimum, and every piano is quoted individually — send a photo for an exact price. Call or text (779) 772-1857.",
     intro:
       "That piano isn't getting played anymore, and it's not moving itself. We handle the heavy lift and the haul-away.",
     bullets: [
