@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { PRICE_TIERS, PRICING_INCLUDES, MATTRESS_NOTE } from "@/lib/seo";
+import { saveSubmission } from "@/lib/submissions";
 import {
   CameraIcon,
   SofaIcon,
@@ -60,6 +61,13 @@ function tierForEighths(n) {
 
 export default function PriceEstimator() {
   const [counts, setCounts] = useState(() => Object.fromEntries(ITEMS.map((i) => [i.key, 0])));
+  // Optional email capture — never gates the estimate. The visitor's estimate
+  // stays on screen either way; the email just gets them the estimate recap
+  // plus the Rockford disposal guide, via the same /api/quote pipeline the
+  // quote form uses (so it lands in the CRM as a lead).
+  const [captureEmail, setCaptureEmail] = useState("");
+  const [captureStatus, setCaptureStatus] = useState("idle"); // idle | sending | sent | error
+  const [captureError, setCaptureError] = useState("");
 
   const totalEighths = useMemo(
     () => ITEMS.reduce((sum, item) => sum + counts[item.key] * item.share, 0),
@@ -90,6 +98,51 @@ export default function PriceEstimator() {
   }
   function reset() {
     setCounts(Object.fromEntries(ITEMS.map((i) => [i.key, 0])));
+  }
+
+  const chosenSummary = ITEMS.filter((item) => counts[item.key] > 0)
+    .map((item) => `${item.name} ×${counts[item.key]}`)
+    .join(", ");
+
+  async function handleCapture(e) {
+    e.preventDefault();
+    const data = new FormData(e.target);
+    const email = captureEmail.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setCaptureError("Enter a valid email address.");
+      return;
+    }
+    setCaptureStatus("sending");
+    setCaptureError("");
+    // Same payload shape as the quote form, so the Apps Script + CRM treat it
+    // as a lead with the estimate in the description. Empty name/phone is
+    // already a supported case (the quote form only requires email).
+    const payload = {
+      "bot-field": data.get("bot-field") || "",
+      name: "",
+      phone: "",
+      email,
+      junkDescription: `Estimator email capture — estimate $${totalPrice} (${tvOnly ? "TV disposal" : tier.name}): ${chosenSummary}. Visitor asked for the estimate + the Rockford disposal guide by email.`,
+      pestTreatment: "no",
+      homeRepair: "no",
+      photos: [],
+      confirmationEmail: true,
+    };
+    try {
+      saveSubmission({ ...payload, photos: [] });
+      const res = await fetch("/api/quote", {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(payload),
+      });
+      const result = await res.json().catch(() => ({ ok: false }));
+      if (!res.ok || !result.ok) throw new Error(result.reason || "send_failed");
+      setCaptureStatus("sent");
+    } catch (err) {
+      console.error("[estimator] email capture failed:", err?.message || err);
+      setCaptureStatus("error");
+      setCaptureError("Something went wrong — please try again, or call/text us at (779) 772-1857.");
+    }
   }
 
   return (
@@ -227,6 +280,61 @@ export default function PriceEstimator() {
                   <CameraIcon className="h-5 w-5" />
                   Get my exact price
                 </a>
+                {captureStatus === "sent" ? (
+                  <div className="mt-5 rounded-xl border border-on-primary/30 bg-on-primary/10 p-4">
+                    <p className="text-sm font-bold">
+                      Done — we&rsquo;ll email your ${totalPrice} estimate to {captureEmail.trim()}.
+                    </p>
+                    <p className="mt-2 text-sm leading-relaxed text-on-primary/90">
+                      Here&rsquo;s the disposal guide right now:
+                    </p>
+                    <a
+                      href="/rockford-disposal-guide.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-1 inline-block text-sm font-bold underline underline-offset-4"
+                    >
+                      Download the Rockford Disposal Guide (PDF)
+                    </a>
+                  </div>
+                ) : (
+                  <form onSubmit={handleCapture} className="mt-5 border-t border-on-primary/20 pt-5">
+                    <p className="hidden">
+                      <label>
+                        Don&apos;t fill this out: <input name="bot-field" />
+                      </label>
+                    </p>
+                    <label htmlFor="estimator-email" className="block text-sm font-bold">
+                      Email me my estimate + the disposal guide
+                    </label>
+                    <p className="mt-1 text-xs leading-relaxed text-on-primary/80">
+                      Optional — your estimate stays right here either way.
+                    </p>
+                    <div className="mt-3 flex gap-2">
+                      <input
+                        id="estimator-email"
+                        type="email"
+                        value={captureEmail}
+                        onChange={(e) => setCaptureEmail(e.target.value)}
+                        placeholder="you@example.com"
+                        autoComplete="email"
+                        className="h-11 min-w-0 flex-1 rounded-xl border border-on-primary/30 bg-white px-3 text-sm text-on-surface placeholder:text-on-surface-variant/60 focus:border-white focus:outline-none"
+                      />
+                      <button
+                        type="submit"
+                        disabled={captureStatus === "sending"}
+                        className="h-11 shrink-0 rounded-xl bg-white px-4 text-sm font-bold text-primary shadow transition-transform hover:-translate-y-0.5 disabled:opacity-60"
+                      >
+                        {captureStatus === "sending" ? "Sending…" : "Email it"}
+                      </button>
+                    </div>
+                    {captureError ? (
+                      <p className="mt-2 text-sm font-bold text-white" role="alert">
+                        {captureError}
+                      </p>
+                    ) : null}
+                  </form>
+                )}
               </>
             ) : (
               <>
